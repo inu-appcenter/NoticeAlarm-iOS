@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BAB12F9AEDCFA80BA922E51E /* Pods_INU_Notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */; };
+		BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BABF587C26B28EA500889C12 /* GoogleService-Info.plist */; };
 		BAF2ED4026B28D63009EE656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2ED3F26B28D63009EE656 /* AppDelegate.swift */; };
 		BAF2ED4226B28D63009EE656 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2ED4126B28D63009EE656 /* SceneDelegate.swift */; };
 		BAF2ED4426B28D63009EE656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2ED4326B28D63009EE656 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090E095EBBD84AFF4A835089 /* Pods-INU_Notification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INU_Notification.debug.xcconfig"; path = "Target Support Files/Pods-INU_Notification/Pods-INU_Notification.debug.xcconfig"; sourceTree = "<group>"; };
+		BABF587C26B28EA500889C12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAF2ED3C26B28D63009EE656 /* INU_Notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INU_Notification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF2ED3F26B28D63009EE656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAF2ED4126B28D63009EE656 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,9 @@
 		BAF2ED4826B28D64009EE656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAF2ED4B26B28D64009EE656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAF2ED4D26B28D64009EE656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAF2ED5326B28D6B009EE656 /* INU_Notification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = INU_Notification.entitlements; sourceTree = "<group>"; };
+		D9C590B9F3180BC4C5CAACA1 /* Pods-INU_Notification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INU_Notification.release.xcconfig"; path = "Target Support Files/Pods-INU_Notification/Pods-INU_Notification.release.xcconfig"; sourceTree = "<group>"; };
+		F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_INU_Notification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +38,89 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAB12F9AEDCFA80BA922E51E /* Pods_INU_Notification.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3712D3A58EC0D072014D3CFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				090E095EBBD84AFF4A835089 /* Pods-INU_Notification.debug.xcconfig */,
+				D9C590B9F3180BC4C5CAACA1 /* Pods-INU_Notification.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		672D8F38CD8F4DD2E61AB196 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BABF587E26B296AA00889C12 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BAF2ED4126B28D63009EE656 /* SceneDelegate.swift */,
+				BAF2ED3F26B28D63009EE656 /* AppDelegate.swift */,
+				BABF588126B296CA00889C12 /* ViewControllers */,
+				BABF588026B296C200889C12 /* Extensions */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		BABF587F26B296B300889C12 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BABF588326B296EA00889C12 /* Storyboards */,
+				BABF588226B296E400889C12 /* Assets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		BABF588026B296C200889C12 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BABF588126B296CA00889C12 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BAF2ED4326B28D63009EE656 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BABF588226B296E400889C12 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BAF2ED4826B28D64009EE656 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BABF588326B296EA00889C12 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BAF2ED4526B28D63009EE656 /* Main.storyboard */,
+				BAF2ED4A26B28D64009EE656 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		BAF2ED3326B28D63009EE656 = {
 			isa = PBXGroup;
 			children = (
 				BAF2ED3E26B28D63009EE656 /* INU_Notification */,
 				BAF2ED3D26B28D63009EE656 /* Products */,
+				3712D3A58EC0D072014D3CFD /* Pods */,
+				672D8F38CD8F4DD2E61AB196 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +135,10 @@
 		BAF2ED3E26B28D63009EE656 /* INU_Notification */ = {
 			isa = PBXGroup;
 			children = (
-				BAF2ED3F26B28D63009EE656 /* AppDelegate.swift */,
-				BAF2ED4126B28D63009EE656 /* SceneDelegate.swift */,
-				BAF2ED4326B28D63009EE656 /* ViewController.swift */,
-				BAF2ED4526B28D63009EE656 /* Main.storyboard */,
-				BAF2ED4826B28D64009EE656 /* Assets.xcassets */,
-				BAF2ED4A26B28D64009EE656 /* LaunchScreen.storyboard */,
+				BABF587F26B296B300889C12 /* Resource */,
+				BABF587E26B296AA00889C12 /* Source */,
+				BAF2ED5326B28D6B009EE656 /* INU_Notification.entitlements */,
+				BABF587C26B28EA500889C12 /* GoogleService-Info.plist */,
 				BAF2ED4D26B28D64009EE656 /* Info.plist */,
 			);
 			path = INU_Notification;
@@ -74,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAF2ED5026B28D64009EE656 /* Build configuration list for PBXNativeTarget "INU_Notification" */;
 			buildPhases = (
+				354417CE2B30A6367E81EB08 /* [CP] Check Pods Manifest.lock */,
 				BAF2ED3826B28D63009EE656 /* Sources */,
 				BAF2ED3926B28D63009EE656 /* Frameworks */,
 				BAF2ED3A26B28D63009EE656 /* Resources */,
+				B68D080B050413FA08E1DDA0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,12 +204,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF2ED4C26B28D64009EE656 /* LaunchScreen.storyboard in Resources */,
+				BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */,
 				BAF2ED4926B28D64009EE656 /* Assets.xcassets in Resources */,
 				BAF2ED4726B28D63009EE656 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		354417CE2B30A6367E81EB08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-INU_Notification-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B68D080B050413FA08E1DDA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-INU_Notification/Pods-INU_Notification-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-INU_Notification/Pods-INU_Notification-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-INU_Notification/Pods-INU_Notification-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BAF2ED3826B28D63009EE656 /* Sources */ = {
@@ -283,9 +405,11 @@
 		};
 		BAF2ED5126B28D64009EE656 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 090E095EBBD84AFF4A835089 /* Pods-INU_Notification.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = INU_Notification/INU_Notification.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AANGG4Q668;
 				INFOPLIST_FILE = INU_Notification/Info.plist;
@@ -302,9 +426,11 @@
 		};
 		BAF2ED5226B28D64009EE656 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9C590B9F3180BC4C5CAACA1 /* Pods-INU_Notification.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = INU_Notification/INU_Notification.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AANGG4Q668;
 				INFOPLIST_FILE = INU_Notification/Info.plist;

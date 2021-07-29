@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>549205843285-asl60vn9llm95qdftfuknl02r4d76vkr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.549205843285-asl60vn9llm95qdftfuknl02r4d76vkr</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>549205843285-7umgbiucnmbv1h014ns3mfnl5qhjm6us.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDjROtcIPgaTvB84F3WRm6XRwn9y7ZvvQk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>549205843285</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.appcenter.INU-Notification</string>
+	<key>PROJECT_ID</key>
+	<string>noticealarm-2271d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>noticealarm-2271d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:549205843285:ios:692dbc734cbe36413ce3dc</string>
+	<key>DATABASE_URL</key>
+	<string>https://noticealarm-2271d-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
