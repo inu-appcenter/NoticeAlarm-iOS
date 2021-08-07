@@ -11,20 +11,28 @@ class KeywordViewController: UIViewController {
     
     @IBOutlet weak var keywordTextField: UITextField!
     @IBOutlet weak var keywordTableView: UITableView!
+    @IBOutlet weak var selectMajorButton: UIButton!
     let cellID: String = "keywordCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         keywordTableView.delegate = self
         keywordTableView.dataSource = self
         keywordTextField.delegate = self
         
         keywordTextField.placeholder = "키워드를 입력해주세요"
         keywordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        selectMajorButton.setTitle("학과 변경", for: .normal)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkMajor()
     }
     
     
+    //
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -36,14 +44,25 @@ class KeywordViewController: UIViewController {
             keywordTextField.text = keywordTextField.text?.trimmingCharacters(in: .whitespaces)
         }
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    /// 사용자가 학과를 선택했는지 확인합니다.
+    func checkMajor() {
+        
+        // UserDefaults에 학과가 저장이 되었는가?
+        if let major = UserDefaults.standard.string(forKey: "major"), major != "" {
+            print(major)
+        } else {
+            // 알람 나와랏
+            let updateAlert = UIAlertController(title: "경고", message: "이용을 위해 학과를 무조건! 선택하셔야합니다. 선택하러 가시겠어요?", preferredStyle: .alert)
+            updateAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                // 유저가 ok버튼을 누르면 ViewController를 보여주잣..
+                let vc = self.storyboard?.instantiateViewController(identifier: "MajorSelectViewController") as! MajorSelectViewController
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            }))
+            present(updateAlert, animated: true)
+            
+            
+        }
+    }    
 }

@@ -122,10 +122,9 @@ extension KeywordViewController: UITableViewDataSource, UITableViewDelegate, UIT
         
         
         
-        // Firebase Database 읽기
+        // UserDefaults 읽어서 서버로 보내자
         
         
-//        ref.child("keyword_test").setValue(object)
         return true
     }
 }

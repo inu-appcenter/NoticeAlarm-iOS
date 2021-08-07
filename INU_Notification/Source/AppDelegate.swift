@@ -38,8 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             if let error = error {
                 print("Error fetching FCM registration token: \(error)")
             } else if let token = token {
-                print("FCM registration token: \(token)")
+                // print("FCM registration token: \(token)")
                 // print("Remote FCM registration token: \(token)")
+                UserDefaults.standard.set(token, forKey: "FCMtoken")
             }
         }
         
@@ -93,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // ...
         
         // Print full message.
-        print(userInfo)
+        // print(userInfo)
         
         // Change this to your preferred presentation option
         completionHandler([[.banner, .list, .sound]])
@@ -110,7 +111,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         
         // Print full message.
-        print(userInfo)
+        // print(userInfo)
         
         completionHandler()
     }
@@ -132,7 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         // Print full message.
-        print(userInfo)
+        // print(userInfo)
         
         completionHandler(UIBackgroundFetchResult.newData)
     }
