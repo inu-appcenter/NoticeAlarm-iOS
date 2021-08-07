@@ -8,10 +8,11 @@
 import UIKit
 
 class MajorSelectViewController: UIViewController {
-
+    
     @IBOutlet weak var collegeTextField: UITextField!
     @IBOutlet weak var majorTextField: UITextField!
-
+    @IBOutlet weak var completeButton: UIButton!
+    
     var collegePickerView: UIPickerView = UIPickerView()
     var majorPickerView: UIPickerView = UIPickerView()
     
@@ -27,7 +28,7 @@ class MajorSelectViewController: UIViewController {
         collegePickerView.delegate = self
         collegePickerView.dataSource = self
         collegePickerView.tag = 1
-
+        
         majorPickerView.delegate = self
         majorPickerView.dataSource = self
         majorPickerView.tag = 2
@@ -37,6 +38,8 @@ class MajorSelectViewController: UIViewController {
         
         collegeTextField.textAlignment = .center
         majorTextField.textAlignment = .center
+        
+        completeButton.setTitle("완료", for: .normal)
         
         let jsonDecoder: JSONDecoder = JSONDecoder()
         guard let dataAsset: NSDataAsset = NSDataAsset(name: "INU") else {
@@ -51,6 +54,19 @@ class MajorSelectViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
+        
+    }
+    
+    @IBAction func setMajorToUserDefault(_ sender: Any) {
+        guard let college = collegeTextField.text, college != "",
+              let major = majorTextField.text, major != "" else {
+            present(simpleAlert(title: "오류", message: "학과를 정확하게 선택해주세요"), animated: true, completion: nil)
+            return
+        }
+        UserDefaults.standard.set(college, forKey: "college")
+        UserDefaults.standard.set(major, forKey: "major")
+        
+        dismiss(animated: true, completion: nil)
     }
 }
 
