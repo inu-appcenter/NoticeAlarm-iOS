@@ -53,19 +53,62 @@
         <!--키워드 입력-->
         <scene sceneID="zco-nk-5pD">
             <objects>
-                <viewController id="O7k-J8-2cB" sceneMemberID="viewController">
+                <viewController id="O7k-J8-2cB" customClass="KeywordViewController" customModule="INU_Notification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZL-9J-Vgh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mS8-pH-g6u">
+                                <rect key="frame" x="62" y="340" width="291" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q0c-hc-owT">
+                                <rect key="frame" x="62" y="418" width="291" height="395"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="keywordCell" textLabel="Y8e-4N-haZ" style="IBUITableViewCellStyleDefault" id="WQ8-Z5-ndX">
+                                        <rect key="frame" x="0.0" y="24.5" width="291" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WQ8-Z5-ndX" id="3fX-jK-6gF">
+                                            <rect key="frame" x="0.0" y="0.0" width="291" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y8e-4N-haZ">
+                                                    <rect key="frame" x="16" y="0.0" width="259" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yrz-Nl-7Hz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yrz-Nl-7Hz" firstAttribute="trailing" secondItem="mS8-pH-g6u" secondAttribute="trailing" constant="61" id="23h-sV-84t"/>
+                            <constraint firstItem="Q0c-hc-owT" firstAttribute="top" secondItem="mS8-pH-g6u" secondAttribute="bottom" constant="44" id="JMN-4x-XaY"/>
+                            <constraint firstItem="yrz-Nl-7Hz" firstAttribute="bottom" secondItem="Q0c-hc-owT" secondAttribute="bottom" id="ODp-o9-KXD"/>
+                            <constraint firstItem="mS8-pH-g6u" firstAttribute="leading" secondItem="yrz-Nl-7Hz" secondAttribute="leading" constant="62" id="VIt-qf-5hm"/>
+                            <constraint firstItem="Q0c-hc-owT" firstAttribute="leading" secondItem="yrz-Nl-7Hz" secondAttribute="leading" constant="62" id="f4S-Jd-4dU"/>
+                            <constraint firstItem="yrz-Nl-7Hz" firstAttribute="trailing" secondItem="Q0c-hc-owT" secondAttribute="trailing" constant="61" id="lPt-S0-DkP"/>
+                            <constraint firstItem="mS8-pH-g6u" firstAttribute="top" secondItem="yrz-Nl-7Hz" secondAttribute="top" constant="296" id="m53-qy-a8l"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="키워드 입력" image="key" catalog="system" id="veT-8B-my5"/>
                     <navigationItem key="navigationItem" id="ecr-sN-Zqf"/>
+                    <connections>
+                        <outlet property="keywordTableView" destination="Q0c-hc-owT" id="Vjc-bT-MxQ"/>
+                        <outlet property="keywordTextField" destination="mS8-pH-g6u" id="opJ-WS-Mce"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywg-3Y-DXQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219" y="803"/>
+            <point key="canvasLocation" x="-220.28985507246378" y="802.90178571428567"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="huz-KV-dzK">
@@ -73,6 +116,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5HV-6k-DPe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CbO-Bn-JXb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

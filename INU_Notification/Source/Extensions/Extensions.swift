@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: MajorSelectViewController
 extension MajorSelectViewController: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -61,5 +62,70 @@ extension MajorSelectViewController: UITextFieldDelegate, UIPickerViewDelegate, 
         default:
             return
         }
+    }
+}
+
+// MARK: KeywordViewController
+extension KeywordViewController: UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+    
+    // 연산 프로퍼티 적용, 배열을 encode 하여 저장
+    private var keywordArray: [String] {
+        get {
+            var keywords: [String]?
+            if let data = UserDefaults.standard.data(forKey: "keyword") {
+                keywords = try? PropertyListDecoder().decode([String].self, from: data)
+            }
+            return keywords ?? []
+        }
+        set {
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: "keyword")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        keywordArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        
+        cell.textLabel?.text = keywordArray[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            keywordArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        /// textField에 `text`가 작성되어있는가?
+        guard let text = textField.text, text != "" else {
+            present(simpleAlert(title: "오류", message: "키워드를 입력해주세요!"), animated: true, completion: nil)
+            return true
+        }
+        
+        // 이미 등록한 키워드가 존재하는가?
+        if keywordArray.firstIndex(where: {$0 == text}) != nil {
+            present(simpleAlert(title: "오류", message: "이미 등록된 키워드입니다"), animated: true, completion: nil)
+            return true
+        }
+        
+        keywordArray.append(text)
+        textField.text = ""
+        keywordTableView.reloadData()
+        
+        
+        
+        // Firebase Database 읽기
+        
+        
+//        ref.child("keyword_test").setValue(object)
+        return true
     }
 }
