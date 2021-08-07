@@ -11,7 +11,6 @@ class KeywordViewController: UIViewController {
     
     @IBOutlet weak var keywordTextField: UITextField!
     @IBOutlet weak var keywordTableView: UITableView!
-    @IBOutlet weak var showTestButton: UIButton!
     let cellID: String = "keywordCell"
     
     override func viewDidLoad() {
