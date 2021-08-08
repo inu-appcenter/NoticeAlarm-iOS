@@ -7,6 +7,22 @@
 
 import UIKit
 
+
+/**
+ 서버에 전달하기 위한 클래스입니다.
+ */
+final class Message: Codable {
+    var major: String
+    var token: String
+    var keyword: [String]
+    
+    init(major: String, token: String, keywords: [String]) {
+        self.major = major
+        self.token = token
+        self.keyword = keywords
+    }
+}
+
 /**
     단순한 Alert 창인 AlertController를 리턴하는 메소드입니다.
     title 에는 알림 제목이, message에는 알림 내용이 들어갑니다.

@@ -110,6 +110,14 @@ extension KeywordViewController: UITableViewDataSource, UITableViewDelegate, UIT
             return true
         }
         
+        // UserDefaults에 토큰이나 학과 설정이 제대로 되어있는가
+        let userDefault: UserDefaults = .standard
+        guard let major = userDefault.string(forKey: "major"),
+              let token = userDefault.string(forKey: "FCMtoken") else {
+            present(simpleAlert(title: "오류", message: "토큰 또는 학과 설정이\r\n제대로 되어있지 않습니다!"), animated: true, completion: nil)
+            return true
+        }
+        
         // 이미 등록한 키워드가 존재하는가?
         if keywordArray.firstIndex(where: {$0 == text}) != nil {
             present(simpleAlert(title: "오류", message: "이미 등록된 키워드입니다"), animated: true, completion: nil)
@@ -122,9 +130,18 @@ extension KeywordViewController: UITableViewDataSource, UITableViewDelegate, UIT
         
         
         
-        // UserDefaults 읽어서 서버로 보내자
-        
-        
+        // MARK: Send to Server
+        let message: Message = Message(major: major, token: token, keywords: keywordArray)
+        let postRequest = APIRequest()
+        postRequest.save(message: message) { result in
+            switch result {
+            case .success(let message):
+                print("The following message has been sent: \(message.keyword)")
+            case .failure(let error):
+                print("An error occured \(error)")
+                self.present(simpleAlert(title: "전송 실패", message: "서버 전송에 실패하였습니다."), animated: true, completion: nil)
+            }
+        }
         return true
     }
 }

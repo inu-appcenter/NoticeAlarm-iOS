@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */; };
 		BA92C7C026B9539B001908BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92C7BF26B9539B001908BF /* Utils.swift */; };
 		BAB12F9AEDCFA80BA922E51E /* Pods_INU_Notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */; };
 		BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BABF587C26B28EA500889C12 /* GoogleService-Info.plist */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		090E095EBBD84AFF4A835089 /* Pods-INU_Notification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INU_Notification.debug.xcconfig"; path = "Target Support Files/Pods-INU_Notification/Pods-INU_Notification.debug.xcconfig"; sourceTree = "<group>"; };
+		BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BA92C7BF26B9539B001908BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BABF587C26B28EA500889C12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BABF588426B29F4700889C12 /* Major.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Major.swift; sourceTree = "<group>"; };
@@ -75,7 +77,6 @@
 		BABF587E26B296AA00889C12 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				BA92C7BF26B9539B001908BF /* Utils.swift */,
 				BAF2ED4126B28D63009EE656 /* SceneDelegate.swift */,
 				BAF2ED3F26B28D63009EE656 /* AppDelegate.swift */,
 				BABF588126B296CA00889C12 /* ViewControllers */,
@@ -96,6 +97,8 @@
 		BABF588026B296C200889C12 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BA92C7BF26B9539B001908BF /* Utils.swift */,
+				BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */,
 				BABF588426B29F4700889C12 /* Major.swift */,
 				BABF588626B29F5F00889C12 /* Extensions.swift */,
 				BAFD38FD26B7E253007DBBF6 /* KeywordCollectionViewCell.swift */,
@@ -281,6 +284,7 @@
 				BAF2ED4026B28D63009EE656 /* AppDelegate.swift in Sources */,
 				BAF2ED4226B28D63009EE656 /* SceneDelegate.swift in Sources */,
 				BABF588526B29F4700889C12 /* Major.swift in Sources */,
+				BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */,
 				BA92C7C026B9539B001908BF /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
