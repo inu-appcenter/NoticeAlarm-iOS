@@ -114,7 +114,7 @@ extension KeywordViewController: UITableViewDataSource, UITableViewDelegate, UIT
         let userDefault: UserDefaults = .standard
         guard let major = userDefault.string(forKey: "major"),
               let token = userDefault.string(forKey: "FCMtoken") else {
-            present(simpleAlert(title: "오류", message: "토큰 또는 학과 설정이\r\n제대로 되어있지 않습니다!"), animated: true, completion: nil)
+            present(simpleAlert(title: "오류", message: "토큰 또는 학과 설정이\n제대로 되어있지 않습니다!"), animated: true, completion: nil)
             return true
         }
         
@@ -124,24 +124,28 @@ extension KeywordViewController: UITableViewDataSource, UITableViewDelegate, UIT
             return true
         }
         
-        keywordArray.append(text)
-        textField.text = ""
-        keywordTableView.reloadData()
-        
-        
-        
         // MARK: Send to Server
         let message: Message = Message(major: major, token: token, keywords: keywordArray)
         let postRequest = APIRequest()
-        postRequest.save(message: message) { result in
+        
+        // 데이터 전달!
+        postRequest.send(message: message) { result in
+            
             switch result {
-            case .success(let message):
-                print("The following message has been sent: \(message.keyword)")
+            case .success(let response):
+                print("The following message has been sent: '\(response)'")
             case .failure(let error):
                 print("An error occured \(error)")
-                self.present(simpleAlert(title: "전송 실패", message: "서버 전송에 실패하였습니다."), animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.present(simpleAlert(title: "전송 실패", message: "서버 전송에 실패하였습니다.\n\(error)"), animated: true, completion: nil)
+                }
             }
         }
+
+        textField.text = "" // UITextField 업데이트
+        keywordArray.append(text) // UserDefaults 업데이트
+        keywordTableView.reloadData() // 키워드 테이블뷰 reload
+        
         return true
     }
 }

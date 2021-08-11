@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA2CEECD26C107ED0020900F /* Pods_INU_Notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */; };
 		BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */; };
 		BA92C7C026B9539B001908BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92C7BF26B9539B001908BF /* Utils.swift */; };
-		BAB12F9AEDCFA80BA922E51E /* Pods_INU_Notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */; };
 		BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BABF587C26B28EA500889C12 /* GoogleService-Info.plist */; };
 		BABF588526B29F4700889C12 /* Major.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF588426B29F4700889C12 /* Major.swift */; };
 		BABF588726B29F5F00889C12 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF588626B29F5F00889C12 /* Extensions.swift */; };
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB12F9AEDCFA80BA922E51E /* Pods_INU_Notification.framework in Frameworks */,
+				BA2CEECD26C107ED0020900F /* Pods_INU_Notification.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

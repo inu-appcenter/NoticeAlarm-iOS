@@ -9,7 +9,6 @@ import Foundation
 
 enum APIError: Error {
     case responseProblem
-    case decodingProblem
     case encodingProblem
 }
 
@@ -24,24 +23,22 @@ struct APIRequest {
         self.resourceURL = resourceURL
     }
     
-    func save(message messageToSend: Message, completion: @escaping(Result<Message, APIError>) -> Void) {
+    func send(message messageToSend: Message, completion: @escaping(Result<String, APIError>) -> Void) {
         do {
             var urlRequest = URLRequest(url: resourceURL)
             urlRequest.httpMethod = "POST"
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
             urlRequest.httpBody = try JSONEncoder().encode(messageToSend)
-
+            
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, _ in
+                // 응답 과정에 문제가 생겼는가
                 guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200,
                       let jsonData = data else {
                     completion(.failure(.responseProblem))
                     return
                 }
-                do {
-                    let messageData = try JSONDecoder().decode(Message.self, from: jsonData)
-                    completion(.success(messageData))
-                } catch {
-                    completion(.failure(.decodingProblem))
+                if let responseData = String(data: jsonData, encoding: .utf8) {
+                    completion(.success(responseData))
                 }
             }
             dataTask.resume()
