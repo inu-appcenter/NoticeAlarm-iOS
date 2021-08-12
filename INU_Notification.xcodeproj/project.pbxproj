@@ -20,7 +20,6 @@
 		BAF2ED4926B28D64009EE656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF2ED4826B28D64009EE656 /* Assets.xcassets */; };
 		BAF2ED4C26B28D64009EE656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF2ED4A26B28D64009EE656 /* LaunchScreen.storyboard */; };
 		BAFD38FC26B7DBCF007DBBF6 /* KeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFD38FB26B7DBCF007DBBF6 /* KeywordViewController.swift */; };
-		BAFD38FE26B7E253007DBBF6 /* KeywordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFD38FD26B7E253007DBBF6 /* KeywordCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +39,6 @@
 		BAF2ED4D26B28D64009EE656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAF2ED5326B28D6B009EE656 /* INU_Notification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = INU_Notification.entitlements; sourceTree = "<group>"; };
 		BAFD38FB26B7DBCF007DBBF6 /* KeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordViewController.swift; sourceTree = "<group>"; };
-		BAFD38FD26B7E253007DBBF6 /* KeywordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCollectionViewCell.swift; sourceTree = "<group>"; };
 		D9C590B9F3180BC4C5CAACA1 /* Pods-INU_Notification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INU_Notification.release.xcconfig"; path = "Target Support Files/Pods-INU_Notification/Pods-INU_Notification.release.xcconfig"; sourceTree = "<group>"; };
 		F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_INU_Notification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,7 +99,6 @@
 				BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */,
 				BABF588426B29F4700889C12 /* Major.swift */,
 				BABF588626B29F5F00889C12 /* Extensions.swift */,
-				BAFD38FD26B7E253007DBBF6 /* KeywordCollectionViewCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -279,7 +276,6 @@
 			files = (
 				BAFD38FC26B7DBCF007DBBF6 /* KeywordViewController.swift in Sources */,
 				BABF588726B29F5F00889C12 /* Extensions.swift in Sources */,
-				BAFD38FE26B7E253007DBBF6 /* KeywordCollectionViewCell.swift in Sources */,
 				BAF2ED4426B28D63009EE656 /* MajorSelectViewController.swift in Sources */,
 				BAF2ED4026B28D63009EE656 /* AppDelegate.swift in Sources */,
 				BAF2ED4226B28D63009EE656 /* SceneDelegate.swift in Sources */,

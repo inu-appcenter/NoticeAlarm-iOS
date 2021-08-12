@@ -10,6 +10,7 @@ import Foundation
 enum APIError: Error {
     case responseProblem
     case encodingProblem
+    case decodingProblem
 }
 
 
@@ -39,6 +40,8 @@ struct APIRequest {
                 }
                 if let responseData = String(data: jsonData, encoding: .utf8) {
                     completion(.success(responseData))
+                } else {
+                    completion(.failure(.decodingProblem))
                 }
             }
             dataTask.resume()

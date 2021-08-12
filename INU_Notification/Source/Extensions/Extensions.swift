@@ -66,7 +66,7 @@ extension MajorSelectViewController: UITextFieldDelegate, UIPickerViewDelegate, 
 }
 
 // MARK: KeywordViewController
-extension KeywordViewController: UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
     
     // 연산 프로퍼티 적용, 배열을 encode 하여 저장
     private var keywordArray: [String] {
@@ -82,23 +82,24 @@ extension KeywordViewController: UITableViewDataSource, UITableViewDelegate, UIT
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         keywordArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        
-        cell.textLabel?.text = keywordArray[indexPath.row]
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? KeywordCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.keywordButton.setTitle(keywordArray[indexPath.row], for: .normal)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            keywordArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
+    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //        if editingStyle == .delete {
+    //            keywordArray.remove(at: indexPath.row)
+    //            tableView.deleteRows(at: [indexPath], with: .fade)
+    //        }
+    //    }
     
     
     
@@ -125,26 +126,31 @@ extension KeywordViewController: UITableViewDataSource, UITableViewDelegate, UIT
         }
         
         // MARK: Send to Server
-        let message: Message = Message(major: major, token: token, keywords: keywordArray)
+        let message: Message = Message(major: major, token: token, keywords: [text])
         let postRequest = APIRequest()
+        
+        
+        var capturedKeywordArray = keywordArray
+        let capturedKeywordCollectionView = registerKeywordsCollectionView
         
         // 데이터 전달!
         postRequest.send(message: message) { result in
-            
             switch result {
             case .success(let response):
                 print("The following message has been sent: '\(response)'")
+                DispatchQueue.main.async {
+                    textField.text = "" // UITextField 업데이트
+                    capturedKeywordArray.append(text) // UserDefaults 업데이트
+                    capturedKeywordCollectionView?.reloadData() // 키워드 reload
+                }
             case .failure(let error):
                 print("An error occured \(error)")
+                // UI변경은 메인 쓰레드로 동작해야하기 때문에 DispatchQueue 사용
                 DispatchQueue.main.async {
-                    self.present(simpleAlert(title: "전송 실패", message: "서버 전송에 실패하였습니다.\n\(error)"), animated: true, completion: nil)
+                    self.present(simpleAlert(title: "전송 실패", message: "서버 전송에 실패하였습니다.\nmessage: \(error)"), animated: true, completion: nil)
                 }
             }
         }
-
-        textField.text = "" // UITextField 업데이트
-        keywordArray.append(text) // UserDefaults 업데이트
-        keywordTableView.reloadData() // 키워드 테이블뷰 reload
         
         return true
     }

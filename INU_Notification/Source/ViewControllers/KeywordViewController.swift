@@ -10,20 +10,24 @@ import UIKit
 class KeywordViewController: UIViewController {
     
     @IBOutlet weak var keywordTextField: UITextField!
-    @IBOutlet weak var keywordTableView: UITableView!
     @IBOutlet weak var selectMajorButton: UIButton!
-    let cellID: String = "keywordCell"
+    @IBOutlet weak var registerKeywordLabel: UILabel!
+    @IBOutlet weak var popularKeywordLabel: UILabel!
+    @IBOutlet weak var registerKeywordsCollectionView: UICollectionView!
+    
+    let cellID: String = "registerKeywordCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        keywordTableView.delegate = self
-        keywordTableView.dataSource = self
+        registerKeywordsCollectionView.dataSource = self
         keywordTextField.delegate = self
         
         keywordTextField.placeholder = "키워드를 입력해주세요"
         keywordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         selectMajorButton.setTitle("학과 변경", for: .normal)
+        registerKeywordLabel.text = "등록 키워드"
+        popularKeywordLabel.text = "인기 키워드"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,4 +69,9 @@ class KeywordViewController: UIViewController {
             
         }
     }    
+}
+
+class KeywordCollectionViewCell: UICollectionViewCell {
+
+    @IBOutlet weak var keywordButton: UIButton!
 }
