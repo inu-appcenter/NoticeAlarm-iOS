@@ -127,7 +127,7 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
         
         // MARK: Send to Server
         let message: Message = Message(major: major, token: token, keywords: [text])
-        let postRequest = APIRequest()
+        let postRequest = APIRequest(endpoint: .addkeywords)
         
         
         var capturedKeywordArray = keywordArray

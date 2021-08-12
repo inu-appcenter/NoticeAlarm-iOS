@@ -13,12 +13,17 @@ enum APIError: Error {
     case decodingProblem
 }
 
+enum EditStatus: String {
+    case editMajor = "update"
+    case addkeywords = "info"
+    case removeKeywords = "delete"
+}
 
 struct APIRequest {
     let resourceURL: URL
     
-    init() {
-        guard let resourceURL = URL(string: "http://3.38.60.57:8001/info") else {
+    init(endpoint: EditStatus) {
+        guard let resourceURL = URL(string: "http://3.38.60.57:8001/\(endpoint.rawValue)") else {
             fatalError()
         }
         self.resourceURL = resourceURL
