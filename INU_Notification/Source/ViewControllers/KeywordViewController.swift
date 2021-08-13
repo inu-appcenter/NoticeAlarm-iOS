@@ -18,6 +18,8 @@ class KeywordViewController: UIViewController {
     
     let cellID: String = "registerKeywordCell"
     
+    
+    //MARK: - App Cycle Part
     override func viewDidLoad() {
         super.viewDidLoad()
         registerKeywordsCollectionView.dataSource = self
@@ -27,8 +29,6 @@ class KeywordViewController: UIViewController {
         keywordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         selectMajorButton.setTitle("학과 변경", for: .normal)
-        registerKeywordLabel.text = "등록 키워드"
-        popularKeywordLabel.text = "인기 키워드"
         setupCollectionView()
     }
     
@@ -37,7 +37,7 @@ class KeywordViewController: UIViewController {
         checkMajor()
     }
     
-    
+    //MARK: - Delegate Part
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -50,6 +50,7 @@ class KeywordViewController: UIViewController {
         }
     }
     
+    //MARK: - 사용자 정의 함수 part
     private func setupCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumLineSpacing = .zero
@@ -60,13 +61,13 @@ class KeywordViewController: UIViewController {
         registerKeywordsCollectionView.setCollectionViewLayout(flowLayout, animated: false)
         registerKeywordsCollectionView.delegate = self
         registerKeywordsCollectionView.dataSource = self
-        registerKeywordsCollectionView.backgroundColor = .white
+//        registerKeywordsCollectionView.backgroundColor = .white
         registerKeywordsCollectionView.register(KeywordCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
     }
-    
+
     /// 사용자가 학과를 선택했는지 확인합니다.
     func checkMajor() {
-        
+
         // UserDefaults에 학과가 저장이 되었는가?
         if let major = UserDefaults.standard.string(forKey: "major"), major != "" {
             print(major)
@@ -81,39 +82,40 @@ class KeywordViewController: UIViewController {
             }))
             present(updateAlert, animated: true)
             
-            
         }
     }    
 }
 
 class KeywordCollectionViewCell: UICollectionViewCell {
-    
+
     let keywordButton: UIButton = UIButton()
-    
-    
+
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
         
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
     }
-    
+
+    /**
+    keywordCell에 UIButton을 추가 및 레이아웃을 설정해주는 역할을 합니다.
+     */
     private func setupView() {
-        backgroundColor = .blue
         contentView.addSubview(keywordButton)
         
         keywordButton.snp.makeConstraints { maker in
-            maker.edges.equalToSuperview().inset(15)
+            maker.edges.equalToSuperview().inset(10)
         }
     }
-     
+
     static func fittingSize(availableHeight: CGFloat, name: String?) -> CGSize {
         let cell = KeywordCollectionViewCell()
-        cell.keywordButton.setTitle(name, for: .normal)
+        cell.configure(name: name)
         
         let targetSize = CGSize(width: UIView.layoutFittingCompressedSize.width, height: availableHeight)
         print(cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .fittingSizeLevel, verticalFittingPriority: .required))
@@ -123,5 +125,17 @@ class KeywordCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = frame.height / 2
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.lightGray.cgColor
+        
+    }
+
+    func configure(name: String?) {
+        guard let name = name else { return }
+        keywordButton.setTitle("#\(name)", for: .normal)
+        keywordButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+        keywordButton.semanticContentAttribute = .forceRightToLeft
+        keywordButton.tintColor = .lightGray
+        
     }
 }

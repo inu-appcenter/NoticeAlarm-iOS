@@ -90,7 +90,7 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? KeywordCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.keywordButton.setTitle(keywordArray[indexPath.item], for: .normal)
+        cell.configure(name: keywordArray[indexPath.item])
         return cell
     }
     
@@ -156,7 +156,6 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
                 }
             }
         }
-        
         return true
     }
 }
