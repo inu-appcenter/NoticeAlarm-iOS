@@ -90,8 +90,12 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? KeywordCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.keywordButton.setTitle(keywordArray[indexPath.row], for: .normal)
+        cell.keywordButton.setTitle(keywordArray[indexPath.item], for: .normal)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return KeywordCollectionViewCell.fittingSize(availableHeight: 45, name: keywordArray[indexPath.item])
     }
     
     //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -138,6 +142,7 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
             switch result {
             case .success(let response):
                 print("The following message has been sent: '\(response)'")
+                // UI변경은 메인 쓰레드로 동작해야하기 때문에 DispatchQueue 사용
                 DispatchQueue.main.async {
                     textField.text = "" // UITextField 업데이트
                     capturedKeywordArray.append(text) // UserDefaults 업데이트

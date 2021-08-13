@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class KeywordViewController: UIViewController {
     
@@ -28,6 +29,7 @@ class KeywordViewController: UIViewController {
         selectMajorButton.setTitle("학과 변경", for: .normal)
         registerKeywordLabel.text = "등록 키워드"
         popularKeywordLabel.text = "인기 키워드"
+        setupCollectionView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,7 +38,6 @@ class KeywordViewController: UIViewController {
     }
     
     
-    //
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -47,6 +48,20 @@ class KeywordViewController: UIViewController {
             present(simpleAlert(title: "오류", message: "띄어쓰기는 할 수 없습니다!"), animated: true, completion: nil)
             keywordTextField.text = keywordTextField.text?.trimmingCharacters(in: .whitespaces)
         }
+    }
+    
+    private func setupCollectionView() {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumLineSpacing = .zero
+        flowLayout.minimumInteritemSpacing = 16
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.sectionInset = .init(top: 5, left: 16, bottom: 5, right: 16)
+        
+        registerKeywordsCollectionView.setCollectionViewLayout(flowLayout, animated: false)
+        registerKeywordsCollectionView.delegate = self
+        registerKeywordsCollectionView.dataSource = self
+        registerKeywordsCollectionView.backgroundColor = .white
+        registerKeywordsCollectionView.register(KeywordCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
     }
     
     /// 사용자가 학과를 선택했는지 확인합니다.
@@ -72,6 +87,41 @@ class KeywordViewController: UIViewController {
 }
 
 class KeywordCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var keywordButton: UIButton!
+    
+    let keywordButton: UIButton = UIButton()
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+    
+    private func setupView() {
+        backgroundColor = .blue
+        contentView.addSubview(keywordButton)
+        
+        keywordButton.snp.makeConstraints { maker in
+            maker.edges.equalToSuperview().inset(15)
+        }
+    }
+     
+    static func fittingSize(availableHeight: CGFloat, name: String?) -> CGSize {
+        let cell = KeywordCollectionViewCell()
+        cell.keywordButton.setTitle(name, for: .normal)
+        
+        let targetSize = CGSize(width: UIView.layoutFittingCompressedSize.width, height: availableHeight)
+        print(cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .fittingSizeLevel, verticalFittingPriority: .required))
+        return cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .fittingSizeLevel, verticalFittingPriority: .required)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = frame.height / 2
+    }
 }
