@@ -14,6 +14,7 @@ class KeywordViewController: UIViewController {
     @IBOutlet weak var selectMajorButton: UIButton!
     @IBOutlet weak var registerKeywordLabel: UILabel!
     @IBOutlet weak var popularKeywordLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var registerKeywordsCollectionView: UICollectionView!
     
     let cellID: String = "registerKeywordCell"
@@ -27,7 +28,14 @@ class KeywordViewController: UIViewController {
         
         keywordTextField.placeholder = "키워드를 입력해주세요"
         keywordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        
+        keywordTextField.layer.borderWidth = 2
+        keywordTextField.layer.cornerRadius = 20
+        keywordTextField.layer.borderColor = UIColor(hex: "14286F").cgColor
+
+
+        iconImageView.image = Bundle.main.icon
+
+
         selectMajorButton.setTitle("학과 변경", for: .normal)
         setupCollectionView()
     }

@@ -135,8 +135,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mS8-pH-g6u">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mS8-pH-g6u">
                                 <rect key="frame" x="62" y="340" width="291" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -162,7 +163,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCK-i0-ryX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="KCK-i0-ryX">
                                 <rect key="frame" x="87" y="138" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -191,15 +192,11 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yrz-Nl-7Hz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="yrz-Nl-7Hz" firstAttribute="trailing" secondItem="mS8-pH-g6u" secondAttribute="trailing" constant="61" id="23h-sV-84t"/>
-                            <constraint firstItem="mS8-pH-g6u" firstAttribute="leading" secondItem="yrz-Nl-7Hz" secondAttribute="leading" constant="62" id="VIt-qf-5hm"/>
-                            <constraint firstItem="mS8-pH-g6u" firstAttribute="top" secondItem="yrz-Nl-7Hz" secondAttribute="top" constant="296" id="m53-qy-a8l"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="키워드 입력" image="key" catalog="system" id="veT-8B-my5"/>
                     <navigationItem key="navigationItem" id="ecr-sN-Zqf"/>
                     <connections>
+                        <outlet property="iconImageView" destination="KCK-i0-ryX" id="dhf-Cu-dmg"/>
                         <outlet property="keywordTextField" destination="mS8-pH-g6u" id="opJ-WS-Mce"/>
                         <outlet property="popularKeywordLabel" destination="m7X-cY-ZQR" id="hQu-gR-a5W"/>
                         <outlet property="registerKeywordLabel" destination="ahL-uC-rwN" id="9c7-op-wbw"/>
@@ -213,6 +210,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon" width="128" height="128"/>
         <image name="key" catalog="system" width="86" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>

@@ -7,7 +7,41 @@
 
 import UIKit
 
-// MARK: MajorSelectViewController
+// MARK: - UIColor
+extension UIColor {
+    convenience init(hex: String, alpha: CGFloat = 1.0) {
+        var hexFormatted: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+        if hexFormatted.hasPrefix("#") {
+            hexFormatted = String(hexFormatted.dropFirst())
+            
+        }
+        assert(hexFormatted.count == 6, "Invalid hex code used.")
+        var rgbValue: UInt64 = 0
+        Scanner(string: hexFormatted).scanHexInt64(&rgbValue)
+        self.init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+                  green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+                  blue: CGFloat(rgbValue & 0x0000FF) / 255.0, alpha: alpha)
+    }
+}
+
+// MARK: - Bundle
+extension Bundle {
+  
+  public var icon: UIImage? {
+    
+    if let icons = infoDictionary?["CFBundleIcons"] as? [String: Any],
+       let primary = icons["CFBundlePrimaryIcon"] as? [String: Any],
+       let files = primary["CFBundleIconFiles"] as? [String],
+       let icon = files.last
+    {
+      return UIImage(named: icon)
+    }
+    
+    return nil
+  }
+}
+
+// MARK: - MajorSelectViewController
 extension MajorSelectViewController: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -65,7 +99,7 @@ extension MajorSelectViewController: UITextFieldDelegate, UIPickerViewDelegate, 
     }
 }
 
-// MARK: KeywordViewController
+// MARK: - KeywordViewController
 extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
     
     // 연산 프로퍼티 적용, 배열을 encode 하여 저장
