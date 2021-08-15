@@ -26,23 +26,33 @@ class KeywordViewController: UIViewController {
         registerKeywordsCollectionView.dataSource = self
         keywordTextField.delegate = self
         
-        keywordTextField.placeholder = "키워드를 입력해주세요"
+        
+        // keyword textfield 설정 구간
         keywordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        keywordTextField.clearButtonMode = .always
+
+        // keyword textfield border 설정 구간
+        keywordTextField.borderStyle = .none
         keywordTextField.layer.borderWidth = 2
-        keywordTextField.layer.cornerRadius = 20
+        keywordTextField.layer.cornerRadius = 15
         keywordTextField.layer.borderColor = UIColor(hex: "14286F").cgColor
 
+        // keyword textfield 왼쪽 아이콘 설정 구간
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "magnifyingglass")
+        imageView.frame = CGRect(x: 0.0, y: 0.0, width: imageView.image!.size.width + 10.0, height: imageView.image!.size.height)
+        imageView.contentMode = .center
+        keywordTextField.leftView = imageView
+        keywordTextField.leftViewMode = .always
+        keywordTextField.leftView?.tintColor = .lightGray
 
         iconImageView.image = Bundle.main.icon
-
-
-        selectMajorButton.setTitle("학과 변경", for: .normal)
         setupCollectionView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        checkMajor()
+        // checkMajor()
     }
     
     //MARK: - Delegate Part
@@ -66,10 +76,10 @@ class KeywordViewController: UIViewController {
         flowLayout.scrollDirection = .horizontal
         flowLayout.sectionInset = .init(top: 5, left: 16, bottom: 5, right: 16)
         
+        
         registerKeywordsCollectionView.setCollectionViewLayout(flowLayout, animated: false)
         registerKeywordsCollectionView.delegate = self
         registerKeywordsCollectionView.dataSource = self
-//        registerKeywordsCollectionView.backgroundColor = .white
         registerKeywordsCollectionView.register(KeywordCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
     }
 
@@ -144,6 +154,7 @@ class KeywordCollectionViewCell: UICollectionViewCell {
         keywordButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
         keywordButton.semanticContentAttribute = .forceRightToLeft
         keywordButton.tintColor = .lightGray
+        keywordButton.setTitleColor(.lightGray, for: .normal)
         
     }
 }
