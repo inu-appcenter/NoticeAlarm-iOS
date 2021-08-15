@@ -11,7 +11,6 @@
 		BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */; };
 		BA92C7C026B9539B001908BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92C7BF26B9539B001908BF /* Utils.swift */; };
 		BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BABF587C26B28EA500889C12 /* GoogleService-Info.plist */; };
-		BABF588526B29F4700889C12 /* Major.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF588426B29F4700889C12 /* Major.swift */; };
 		BABF588726B29F5F00889C12 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF588626B29F5F00889C12 /* Extensions.swift */; };
 		BAF2ED4026B28D63009EE656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2ED3F26B28D63009EE656 /* AppDelegate.swift */; };
 		BAF2ED4226B28D63009EE656 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2ED4126B28D63009EE656 /* SceneDelegate.swift */; };
@@ -27,7 +26,6 @@
 		BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BA92C7BF26B9539B001908BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BABF587C26B28EA500889C12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BABF588426B29F4700889C12 /* Major.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Major.swift; sourceTree = "<group>"; };
 		BABF588626B29F5F00889C12 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BAF2ED3C26B28D63009EE656 /* INU_Notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INU_Notification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF2ED3F26B28D63009EE656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 			children = (
 				BA92C7BF26B9539B001908BF /* Utils.swift */,
 				BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */,
-				BABF588426B29F4700889C12 /* Major.swift */,
 				BABF588626B29F5F00889C12 /* Extensions.swift */,
 			);
 			path = Extensions;
@@ -279,7 +276,6 @@
 				BAF2ED4426B28D63009EE656 /* MajorSelectViewController.swift in Sources */,
 				BAF2ED4026B28D63009EE656 /* AppDelegate.swift in Sources */,
 				BAF2ED4226B28D63009EE656 /* SceneDelegate.swift in Sources */,
-				BABF588526B29F4700889C12 /* Major.swift in Sources */,
 				BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */,
 				BA92C7C026B9539B001908BF /* Utils.swift in Sources */,
 			);

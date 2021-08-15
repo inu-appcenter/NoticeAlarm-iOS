@@ -23,6 +23,13 @@ final class Message: Codable {
     }
 }
 
+/// json을 파싱받을 단과별 학과 관련 구조체
+struct Major: Codable {
+    let college: String
+    let major: [String]
+}
+
+
 /**
     단순한 Alert 창인 AlertController를 리턴하는 메소드입니다.
     title 에는 알림 제목이, message에는 알림 내용이 들어갑니다.

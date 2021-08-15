@@ -156,7 +156,12 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
         }
 
         // MARK: Send to Server
-        let message: Message = Message(major: major, token: token, keywords: [text])
+        // let message: Message = Message(major: major, token: token, keywords: [text])
+        // Message 객체가 아니라 Dictionary 타입으로 진행해볼 생각 중
+        var message: [String: String] = [:]
+        message["major"] = major
+        message["token"] = token
+        message["keyword"] = text
         let postRequest = APIRequest(endpoint: .addkeywords)
 
 
