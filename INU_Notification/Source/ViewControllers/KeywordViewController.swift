@@ -104,6 +104,7 @@ class KeywordViewController: UIViewController {
     }    
 }
 
+//MARK: - KeywordCollectionViewCell
 class KeywordCollectionViewCell: UICollectionViewCell {
 
     let keywordButton: UIButton = UIButton()

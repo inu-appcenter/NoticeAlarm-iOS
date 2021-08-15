@@ -131,24 +131,16 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return KeywordCollectionViewCell.fittingSize(availableHeight: 45, name: keywordArray[indexPath.item])
     }
-    
-    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    //        if editingStyle == .delete {
-    //            keywordArray.remove(at: indexPath.row)
-    //            tableView.deleteRows(at: [indexPath], with: .fade)
-    //        }
-    //    }
-    
-    
-    
+
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
+
         /// textField에 `text`가 작성되어있는가?
         guard let text = textField.text, text != "" else {
             present(simpleAlert(title: "오류", message: "키워드를 입력해주세요!"), animated: true, completion: nil)
             return true
         }
-        
+
         // UserDefaults에 토큰이나 학과 설정이 제대로 되어있는가
         let userDefault: UserDefaults = .standard
         guard let major = userDefault.string(forKey: "major"),
@@ -156,21 +148,21 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
             present(simpleAlert(title: "오류", message: "토큰 또는 학과 설정이\n제대로 되어있지 않습니다!"), animated: true, completion: nil)
             return true
         }
-        
+
         // 이미 등록한 키워드가 존재하는가?
         if keywordArray.firstIndex(where: {$0 == text}) != nil {
             present(simpleAlert(title: "오류", message: "이미 등록된 키워드입니다"), animated: true, completion: nil)
             return true
         }
-        
+
         // MARK: Send to Server
         let message: Message = Message(major: major, token: token, keywords: [text])
         let postRequest = APIRequest(endpoint: .addkeywords)
-        
-        
+
+
         var capturedKeywordArray = keywordArray
         let capturedKeywordCollectionView = registerKeywordsCollectionView
-        
+
         // 데이터 전달!
         postRequest.send(message: message) { result in
             switch result {
