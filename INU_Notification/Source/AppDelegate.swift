@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             } else if let token = token {
                 // print("FCM registration token: \(token)")
                 // print("Remote FCM registration token: \(token)")
-                UserDefaults.standard.set(token, forKey: "FCMtoken")
+                UserDefaults.standard.set(token, forKey: "FCMToken")
             }
         }
         

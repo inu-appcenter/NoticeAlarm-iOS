@@ -7,23 +7,14 @@
 
 import UIKit
 
+typealias Message = [String:String]
 
 /**
- 서버에 전달하기 위한 클래스입니다.
+ json을 파싱받을 단과별 학과 관련 구조체.
+ 각 college에 따른 major가 포함되어있다.
+ - college: 단과대학을 나타냅니다.
+ - major: 학과를 나타내며 단과대학에 의존적입니다.
  */
-final class Message: Codable {
-    var major: String
-    var token: String
-    var keyword: [String]
-    
-    init(major: String, token: String, keywords: [String]) {
-        self.major = major
-        self.token = token
-        self.keyword = keywords
-    }
-}
-
-/// json을 파싱받을 단과별 학과 관련 구조체
 struct Major: Codable {
     let college: String
     let major: [String]

@@ -137,7 +137,6 @@ class KeywordCollectionViewCell: UICollectionViewCell {
         cell.configure(name: name)
         
         let targetSize = CGSize(width: UIView.layoutFittingCompressedSize.width, height: availableHeight)
-        print(cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .fittingSizeLevel, verticalFittingPriority: .required))
         return cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .fittingSizeLevel, verticalFittingPriority: .required)
     }
     
@@ -156,16 +155,5 @@ class KeywordCollectionViewCell: UICollectionViewCell {
         keywordButton.semanticContentAttribute = .forceRightToLeft
         keywordButton.tintColor = .lightGray
         keywordButton.setTitleColor(.lightGray, for: .normal)
-        keywordButton.addTarget(self, action: #selector(onTapButton), for: .touchUpInside)
-    }
-    
-    @objc
-    func onTapButton() {
-        guard let text = keywordButton.titleLabel?.text else { return }
-        let startIndex = text.index(text.startIndex, offsetBy: 1)
-        
-        
-        text[startIndex...]
-        
     }
 }

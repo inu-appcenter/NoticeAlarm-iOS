@@ -57,16 +57,35 @@ class MajorSelectViewController: UIViewController {
         
     }
     
-    @IBAction func setMajorToUserDefault(_ sender: Any) {
+    @IBAction func setMajor(_ sender: Any) {
         guard let college = collegeTextField.text, college != "",
               let major = majorTextField.text, major != "" else {
             present(simpleAlert(title: "오류", message: "학과를 정확하게 선택해주세요"), animated: true, completion: nil)
             return
         }
-        UserDefaults.standard.set(college, forKey: "college")
-        UserDefaults.standard.set(major, forKey: "major")
         
-        dismiss(animated: true, completion: nil)
+        let userDefault: UserDefaults = .standard
+        guard let token = userDefault.string(forKey: "FCMToken") else { return }
+        let postRequest = APIRequest(endpoint: .editMajor)
+        var message: Message = [:]
+        
+        message["token"] = token
+        message["major"] = major
+        
+        postRequest.send(message: message) { result in
+            switch result {
+            case .success(let response):
+                print("The following message has been sent(editMajor): '\(response)'")
+                UserDefaults.standard.set(major, forKey: "major")
+                DispatchQueue.main.async { [self] in
+                    self.dismiss(animated: true, completion: nil)
+                }
+            case .failure(let error):
+                print("An error occured(editMajor) \(error)")
+                DispatchQueue.main.async { [self] in
+                    self.present(simpleAlert(title: "전송 실패", message: "서버 전송에 실패하였습니다.\nmessage: \(error)"), animated: true, completion: nil)
+                }
+            }
+        }
     }
 }
-

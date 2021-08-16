@@ -16,23 +16,31 @@ enum APIError: Error {
 enum EditStatus: String {
     case editMajor = "update"
     case addkeywords = "info"
-    case removeKeywords = "delete"
+    case deleteKeywords = "delete"
 }
 
 struct APIRequest {
     let resourceURL: URL
-    
+    let httpMethod: String
     init(endpoint: EditStatus) {
         guard let resourceURL = URL(string: "http://3.38.60.57:8001/\(endpoint.rawValue)") else {
             fatalError()
         }
         self.resourceURL = resourceURL
+        switch endpoint {
+        case .addkeywords:
+            httpMethod = "POST"
+        case .deleteKeywords:
+            httpMethod = "DELETE"
+        default:
+            httpMethod = "PATCH"
+        }
     }
     
-    func send(message messageToSend: [String: String], completion: @escaping(Result<String, APIError>) -> Void) {
+    func send(message messageToSend: Message, completion: @escaping(Result<String, APIError>) -> Void) {
         do {
             var urlRequest = URLRequest(url: resourceURL)
-            urlRequest.httpMethod = "POST"
+            urlRequest.httpMethod = httpMethod
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
             urlRequest.httpBody = try JSONEncoder().encode(messageToSend)
             
@@ -43,9 +51,11 @@ struct APIRequest {
                     completion(.failure(.responseProblem))
                     return
                 }
-                if let responseData = String(data: jsonData, encoding: .utf8) {
+                if let responseData = String(data: jsonData, encoding: .utf8),
+                   responseData == "\"200\"" {
                     completion(.success(responseData))
                 } else {
+                    print(String(data: jsonData, encoding: .utf8)) // test code
                     completion(.failure(.decodingProblem))
                 }
             }

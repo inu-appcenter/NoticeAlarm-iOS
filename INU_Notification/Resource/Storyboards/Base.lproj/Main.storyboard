@@ -37,7 +37,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="setMajorToUserDefault:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H2R-Jd-z3A"/>
+                                    <action selector="setMajor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JK7-Cb-6LC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -163,7 +163,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Js3-jG-vEF">
-                                <rect key="frame" x="62" y="467" width="291" height="59"/>
+                                <rect key="frame" x="62" y="467" width="352" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WTx-Az-llP">
