@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BAB12F9AEDCFA80BA922E51E /* Pods_INU_Notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */; };
+		BA2CEECD26C107ED0020900F /* Pods_INU_Notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */; };
+		BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */; };
+		BA92C7C026B9539B001908BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92C7BF26B9539B001908BF /* Utils.swift */; };
 		BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BABF587C26B28EA500889C12 /* GoogleService-Info.plist */; };
-		BABF588526B29F4700889C12 /* Major.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF588426B29F4700889C12 /* Major.swift */; };
 		BABF588726B29F5F00889C12 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF588626B29F5F00889C12 /* Extensions.swift */; };
 		BAF2ED4026B28D63009EE656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2ED3F26B28D63009EE656 /* AppDelegate.swift */; };
 		BAF2ED4226B28D63009EE656 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2ED4126B28D63009EE656 /* SceneDelegate.swift */; };
@@ -17,12 +18,14 @@
 		BAF2ED4726B28D63009EE656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF2ED4526B28D63009EE656 /* Main.storyboard */; };
 		BAF2ED4926B28D64009EE656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF2ED4826B28D64009EE656 /* Assets.xcassets */; };
 		BAF2ED4C26B28D64009EE656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF2ED4A26B28D64009EE656 /* LaunchScreen.storyboard */; };
+		BAFD38FC26B7DBCF007DBBF6 /* KeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFD38FB26B7DBCF007DBBF6 /* KeywordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		090E095EBBD84AFF4A835089 /* Pods-INU_Notification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INU_Notification.debug.xcconfig"; path = "Target Support Files/Pods-INU_Notification/Pods-INU_Notification.debug.xcconfig"; sourceTree = "<group>"; };
+		BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		BA92C7BF26B9539B001908BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BABF587C26B28EA500889C12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BABF588426B29F4700889C12 /* Major.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Major.swift; sourceTree = "<group>"; };
 		BABF588626B29F5F00889C12 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BAF2ED3C26B28D63009EE656 /* INU_Notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INU_Notification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF2ED3F26B28D63009EE656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 		BAF2ED4B26B28D64009EE656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAF2ED4D26B28D64009EE656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAF2ED5326B28D6B009EE656 /* INU_Notification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = INU_Notification.entitlements; sourceTree = "<group>"; };
+		BAFD38FB26B7DBCF007DBBF6 /* KeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordViewController.swift; sourceTree = "<group>"; };
 		D9C590B9F3180BC4C5CAACA1 /* Pods-INU_Notification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INU_Notification.release.xcconfig"; path = "Target Support Files/Pods-INU_Notification/Pods-INU_Notification.release.xcconfig"; sourceTree = "<group>"; };
 		F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_INU_Notification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -42,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB12F9AEDCFA80BA922E51E /* Pods_INU_Notification.framework in Frameworks */,
+				BA2CEECD26C107ED0020900F /* Pods_INU_Notification.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +93,8 @@
 		BABF588026B296C200889C12 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BABF588426B29F4700889C12 /* Major.swift */,
+				BA92C7BF26B9539B001908BF /* Utils.swift */,
+				BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */,
 				BABF588626B29F5F00889C12 /* Extensions.swift */,
 			);
 			path = Extensions;
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				BAF2ED4326B28D63009EE656 /* MajorSelectViewController.swift */,
+				BAFD38FB26B7DBCF007DBBF6 /* KeywordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -265,11 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAFD38FC26B7DBCF007DBBF6 /* KeywordViewController.swift in Sources */,
 				BABF588726B29F5F00889C12 /* Extensions.swift in Sources */,
 				BAF2ED4426B28D63009EE656 /* MajorSelectViewController.swift in Sources */,
 				BAF2ED4026B28D63009EE656 /* AppDelegate.swift in Sources */,
 				BAF2ED4226B28D63009EE656 /* SceneDelegate.swift in Sources */,
-				BABF588526B29F4700889C12 /* Major.swift in Sources */,
+				BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */,
+				BA92C7C026B9539B001908BF /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
