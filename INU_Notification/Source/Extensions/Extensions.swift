@@ -139,7 +139,6 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
         return KeywordCollectionViewCell.fittingSize(availableHeight: 45, name: keywordArray[indexPath.item])
     }
     
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         /// textField에 `text`가 작성되어있는가?
@@ -208,39 +207,30 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
         
         postRequest.send(message: message) { result in
             switch result {
-            case .success(let response):
-                print("The following message has been sent: '\(response)'")
+            case .success(_):
                 // UI변경은 메인 쓰레드로 동작해야하기 때문에 DispatchQueue 사용
                 DispatchQueue.main.async { [unowned self] in
                     // collectionView의 data를 먼저 삭제 후 데이터 배열 값 삭제
                     self.registerKeywordsCollectionView.deleteItems(at: [IndexPath.init(row: sender.tag, section: 0)])
                     self.keywordArray.remove(at: sender.tag)
                     self.registerKeywordsCollectionView.reloadData()
-                    self.present(simpleAlert(title: "test", message: "message:\(response)"), animated: true, completion: nil)
                 }
             case .failure(let error):
-                print("An error occured \(error)")
                 switch error {
                 case .responseProblem:
                     DispatchQueue.main.async { [unowned self] in
-                        self.present(simpleAlert(title: "전송 실패", message: "서버 전송에 실패하였습니다.\nmessage: \(error)"), animated: true, completion: nil)
+                        self.present(simpleAlert(title: "전송 실패", message: "서버 전송에 실패하였습니다.\n네트워크를 확인해주세요."), animated: true, completion: nil)
                     }
                 case .decodingProblem:
                     DispatchQueue.main.async { [unowned self] in
                         let alert = UIAlertController(title: "오류", message: "서버에 등록되어있지 않는 키워드입니다.\n삭제하시겠습니까?", preferredStyle: .alert)
                         // 키워드가 서버에 없을 때 기존 키워드 그냥 삭제할 경우
                         let okAction = UIAlertAction(title:"확인",style:.default) { _ in
-                            
-                            // 데이터 배열 값 삭제
-                            self.keywordArray.remove(at: sender.tag)
-                            
                             // collectionView cell 삭제
                             self.registerKeywordsCollectionView.deleteItems(at: [IndexPath.init(row: sender.tag, section: 0)])
-                            print("cell[\(sender.tag)] removed")
-                            
-                            // reload
+                            // 데이터 배열 값 삭제
+                            self.keywordArray.remove(at: sender.tag)
                             self.registerKeywordsCollectionView.reloadData()
-                            print("남아있는 userdefaults 배열: \(keywordArray)")
                         }
                         let cancelAction = UIAlertAction(title:"취소",style:.destructive)
                         alert.addAction(cancelAction)
@@ -249,7 +239,6 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
                     }
                 default: break
                 }
-                
             }
         }
     }
