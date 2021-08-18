@@ -30,13 +30,13 @@ class KeywordViewController: UIViewController {
         // keyword textfield 설정 구간
         keywordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         keywordTextField.clearButtonMode = .always
-
+        
         // keyword textfield border 설정 구간
         keywordTextField.borderStyle = .none
         keywordTextField.layer.borderWidth = 2
         keywordTextField.layer.cornerRadius = 15
         keywordTextField.layer.borderColor = UIColor(hex: "14286F").cgColor
-
+        
         // keyword textfield 왼쪽 아이콘 설정 구간
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "magnifyingglass")
@@ -45,7 +45,7 @@ class KeywordViewController: UIViewController {
         keywordTextField.leftView = imageView
         keywordTextField.leftViewMode = .always
         keywordTextField.leftView?.tintColor = .lightGray
-
+        
         iconImageView.image = Bundle.main.icon
         setupCollectionView()
     }
@@ -82,10 +82,10 @@ class KeywordViewController: UIViewController {
         registerKeywordsCollectionView.dataSource = self
         registerKeywordsCollectionView.register(KeywordCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
     }
-
+    
     /// 사용자가 학과를 선택했는지 확인합니다.
     func checkMajor() {
-
+        
         // UserDefaults에 학과가 저장이 되었는가?
         if let major = UserDefaults.standard.string(forKey: "major"), major != "" {
             print(major)
@@ -102,58 +102,4 @@ class KeywordViewController: UIViewController {
             
         }
     }    
-}
-
-//MARK: - KeywordCollectionViewCell
-class KeywordCollectionViewCell: UICollectionViewCell {
-
-    let keywordButton: UIButton = UIButton()
-
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-        
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setupView()
-    }
-
-    /**
-    keywordCell에 UIButton을 추가 및 레이아웃을 설정해주는 역할을 합니다.
-     */
-    private func setupView() {
-        contentView.addSubview(keywordButton)
-        
-        keywordButton.snp.makeConstraints { maker in
-            maker.edges.equalToSuperview().inset(10)
-        }
-    }
-
-    static func fittingSize(availableHeight: CGFloat, name: String?) -> CGSize {
-        let cell = KeywordCollectionViewCell()
-        cell.configure(name: name)
-        
-        let targetSize = CGSize(width: UIView.layoutFittingCompressedSize.width, height: availableHeight)
-        return cell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .fittingSizeLevel, verticalFittingPriority: .required)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = frame.height / 2
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.lightGray.cgColor
-        
-    }
-
-    func configure(name: String?) {
-        guard let name = name else { return }
-        keywordButton.setTitle("#\(name)", for: .normal)
-        keywordButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
-        keywordButton.semanticContentAttribute = .forceRightToLeft
-        keywordButton.tintColor = .lightGray
-        keywordButton.setTitleColor(.lightGray, for: .normal)
-    }
 }
