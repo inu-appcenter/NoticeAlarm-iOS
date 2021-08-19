@@ -88,6 +88,9 @@
                                 <state key="normal" title="다음">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveMajor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="53f-HV-Z2B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -97,6 +100,7 @@
                     <navigationItem key="navigationItem" id="QgC-5V-FBD"/>
                     <connections>
                         <outlet property="completeButton" destination="UlM-q5-aIp" id="pm7-x4-CL1"/>
+                        <outlet property="mainLabel" destination="ybf-Zk-4ks" id="D3D-g6-LpR"/>
                         <outlet property="selectCollectionView" destination="aiA-gN-eHl" id="mUy-LP-BLX"/>
                     </connections>
                 </viewController>
