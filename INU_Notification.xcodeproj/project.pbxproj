@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		BA2CEECD26C107ED0020900F /* Pods_INU_Notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */; };
 		BA64B94626CD5C0C0074BC1C /* MajorSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2ED4326B28D63009EE656 /* MajorSelectViewController.swift */; };
-		BA64B94826CD62970074BC1C /* MajorSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA64B94726CD62970074BC1C /* MajorSelectCollectionViewCell.swift */; };
-		BA64B94A26CD62B10074BC1C /* KeywordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA64B94926CD62B10074BC1C /* KeywordCollectionViewCell.swift */; };
 		BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */; };
 		BA92C7C026B9539B001908BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92C7BF26B9539B001908BF /* Utils.swift */; };
 		BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BABF587C26B28EA500889C12 /* GoogleService-Info.plist */; };
@@ -25,8 +23,6 @@
 
 /* Begin PBXFileReference section */
 		090E095EBBD84AFF4A835089 /* Pods-INU_Notification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INU_Notification.debug.xcconfig"; path = "Target Support Files/Pods-INU_Notification/Pods-INU_Notification.debug.xcconfig"; sourceTree = "<group>"; };
-		BA64B94726CD62970074BC1C /* MajorSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorSelectCollectionViewCell.swift; sourceTree = "<group>"; };
-		BA64B94926CD62B10074BC1C /* KeywordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BA92C7BF26B9539B001908BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BABF587C26B28EA500889C12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -100,8 +96,6 @@
 				BA92C7BF26B9539B001908BF /* Utils.swift */,
 				BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */,
 				BABF588626B29F5F00889C12 /* Extensions.swift */,
-				BA64B94726CD62970074BC1C /* MajorSelectCollectionViewCell.swift */,
-				BA64B94926CD62B10074BC1C /* KeywordCollectionViewCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,8 +277,6 @@
 				BAF2ED4026B28D63009EE656 /* AppDelegate.swift in Sources */,
 				BAF2ED4226B28D63009EE656 /* SceneDelegate.swift in Sources */,
 				BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */,
-				BA64B94A26CD62B10074BC1C /* KeywordCollectionViewCell.swift in Sources */,
-				BA64B94826CD62970074BC1C /* MajorSelectCollectionViewCell.swift in Sources */,
 				BA92C7C026B9539B001908BF /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
