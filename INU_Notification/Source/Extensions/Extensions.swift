@@ -44,18 +44,28 @@ extension Bundle {
 // MARK: - MajorSelectViewController
 extension MajorSelectViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return majorDictionary.count
+        return majors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath) as? MajorSelectCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? MajorSelectCollectionViewCell else {
             return UICollectionViewCell()
         }
         
+        cell.configure(name: majors[indexPath.item].college)
+        cell.collegeButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
         return cell
     }
     
+    // 셀의 크기 설정
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.contentSize
+    }
     
+    @objc
+    func tapButton(sender: UIButton) {
+        
+    }
 }
 
 // MARK: - KeywordViewController
