@@ -78,6 +78,7 @@ extension MajorSelectViewController: UICollectionViewDataSource, UICollectionVie
     func tapButton(sender: UIButton) {
         selectedButtonText = sender.titleLabel?.text
         completeButton.isEnabled = true
+        completeButton.backgroundColor = UIColor(hex: "142B6F")
     }
 }
 

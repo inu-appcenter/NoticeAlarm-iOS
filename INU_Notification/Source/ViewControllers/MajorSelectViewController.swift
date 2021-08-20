@@ -22,6 +22,7 @@ class MajorSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         completeButton.isEnabled = false // 초기에는 버튼 비활성화
+        completeButton.backgroundColor = UIColor(hex: "CCCCCC")
         
         selectCollectionView.dataSource = self
         
@@ -50,6 +51,8 @@ class MajorSelectViewController: UIViewController {
             // UI part
             mainLabel.text = "학과를 선택해주세요"
             completeButton.setTitle("완료", for: .normal)
+            completeButton.isEnabled = false
+            completeButton.backgroundColor = UIColor(hex: "CCCCCC")
             selectCollectionView.reloadData()
             
         } else { // 학과를 선택했을 경우
@@ -62,7 +65,7 @@ class MajorSelectViewController: UIViewController {
             var message: Message = [:]
             let major: String
             if majorButtonText[index...] == "(야)" {
-                major = String(majorButtonText[..<index])
+                major = String(majorButtonText[..<index]) // `(야)`를 없앰
             } else {
                 major = majorButtonText
             }
@@ -108,7 +111,7 @@ class MajorSelectCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         layer.cornerRadius = frame.height / 2
         layer.borderWidth = 2
-        layer.borderColor = UIColor(hex: "14286F").cgColor
+        layer.borderColor = UIColor(hex: "142B6F").cgColor
     }
     
     func configure(name: String?) {
