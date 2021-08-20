@@ -15,6 +15,7 @@ enum APIError: Error {
 
 enum EditStatus: String {
     case editMajor = "update"
+    case setMajor = "student"
     case addkeywords = "info"
     case deleteKeywords = "delete"
 }
@@ -28,7 +29,7 @@ struct APIRequest {
         }
         self.resourceURL = resourceURL
         switch endpoint {
-        case .addkeywords:
+        case .addkeywords, .setMajor:
             httpMethod = "POST"
         case .deleteKeywords:
             httpMethod = "DELETE"
