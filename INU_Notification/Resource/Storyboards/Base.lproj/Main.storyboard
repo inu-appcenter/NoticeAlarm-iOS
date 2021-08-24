@@ -17,37 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="인천대학교" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCs-iH-Bdf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인천대학교" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCs-iH-Bdf">
                                 <rect key="frame" x="168" y="89" width="78" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="학과 키워드 알림에" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geb-sT-FdW">
-                                <rect key="frame" x="141" y="113" width="134" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="학과 키워드 알림에" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geb-sT-FdW">
+                                <rect key="frame" x="140" y="113" width="134" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="오신 것을 환영합니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULC-cm-NHe">
-                                <rect key="frame" x="129" y="137" width="155" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오신 것을 환영합니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULC-cm-NHe">
+                                <rect key="frame" x="129.5" y="137" width="155" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="단과대학을 선택해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybf-Zk-4ks">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="단과대학을 선택해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybf-Zk-4ks">
                                 <rect key="frame" x="90" y="200" width="234" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aiA-gN-eHl">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aiA-gN-eHl">
                                 <rect key="frame" x="31" y="280" width="352" height="404"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AK4-JJ-vkz">
                                     <size key="itemSize" width="323" height="97"/>
@@ -63,15 +58,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="323" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-0Z-Heo">
-                                                    <rect key="frame" x="-10" y="21" width="342" height="55"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-0Z-Heo">
+                                                    <rect key="frame" x="-10" y="21" width="343" height="55"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                     <state key="normal" title="Button">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tCJ-0Z-Heo" firstAttribute="centerX" secondItem="TP3-up-aAC" secondAttribute="centerX" id="PwM-lS-SGr"/>
+                                                <constraint firstItem="tCJ-0Z-Heo" firstAttribute="centerY" secondItem="TP3-up-aAC" secondAttribute="centerY" id="dqk-Pe-oxp"/>
+                                                <constraint firstItem="tCJ-0Z-Heo" firstAttribute="top" secondItem="TP3-up-aAC" secondAttribute="top" constant="21" id="iWn-aY-Pan"/>
+                                                <constraint firstItem="tCJ-0Z-Heo" firstAttribute="leading" secondItem="TP3-up-aAC" secondAttribute="leading" constant="-10" id="wDZ-bs-ecQ"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="323" height="97"/>
                                         <connections>
@@ -80,10 +80,12 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlM-q5-aIp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlM-q5-aIp">
                                 <rect key="frame" x="0.0" y="720" width="414" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92133218050003052" green="0.44974637721883037" blue="0.41927981527031982" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="1yG-qW-g5m"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
@@ -95,6 +97,24 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UlM-q5-aIp" firstAttribute="top" secondItem="aiA-gN-eHl" secondAttribute="bottom" constant="36" id="0ia-46-1Eh"/>
+                            <constraint firstItem="aiA-gN-eHl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="914-qS-5I9"/>
+                            <constraint firstItem="geb-sT-FdW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E1t-Hj-0qg"/>
+                            <constraint firstItem="aiA-gN-eHl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JdI-Hh-ajA"/>
+                            <constraint firstItem="ybf-Zk-4ks" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R21-Yo-P61"/>
+                            <constraint firstItem="geb-sT-FdW" firstAttribute="top" secondItem="yCs-iH-Bdf" secondAttribute="bottom" constant="2" id="Skt-cr-bIr"/>
+                            <constraint firstItem="UlM-q5-aIp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UPH-2V-J4m"/>
+                            <constraint firstItem="UlM-q5-aIp" firstAttribute="centerX" secondItem="aiA-gN-eHl" secondAttribute="centerX" id="Uet-oW-nfV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aiA-gN-eHl" secondAttribute="trailing" constant="31" id="UyP-JC-wI8"/>
+                            <constraint firstItem="ybf-Zk-4ks" firstAttribute="top" secondItem="ULC-cm-NHe" secondAttribute="bottom" constant="41" id="Zea-y9-HHg"/>
+                            <constraint firstItem="yCs-iH-Bdf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="89" id="cxO-Au-AOH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UlM-q5-aIp" secondAttribute="bottom" constant="24" id="iMq-Jk-lvG"/>
+                            <constraint firstItem="aiA-gN-eHl" firstAttribute="top" secondItem="ybf-Zk-4ks" secondAttribute="bottom" constant="51" id="jCn-Mh-VMF"/>
+                            <constraint firstItem="ULC-cm-NHe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kvy-dc-wrE"/>
+                            <constraint firstItem="ULC-cm-NHe" firstAttribute="top" secondItem="geb-sT-FdW" secondAttribute="bottom" constant="2" id="ssf-dh-pfW"/>
+                            <constraint firstItem="yCs-iH-Bdf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tKZ-pv-fDa"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="학과 선택" image="person" catalog="system" id="oqp-G6-jZk"/>
                     <navigationItem key="navigationItem" id="QgC-5V-FBD"/>
@@ -171,13 +191,57 @@
                     <view key="view" contentMode="scaleToFill" id="hp9-IA-3rr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-lP-axY">
+                                <rect key="frame" x="57" y="202" width="300" height="492"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iwR-y4-Tra">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1YA-N6-zlU">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2yD-Ay-Je7">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인천대학교" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmk-15-Ux3">
+                                <rect key="frame" x="57" y="111" width="104" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="학과키워드 알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igo-cg-H40">
+                                <rect key="frame" x="57" y="142" width="151" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aaI-mz-djP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HhB-lP-axY" firstAttribute="leading" secondItem="fmk-15-Ux3" secondAttribute="leading" id="QhH-yz-98r"/>
+                            <constraint firstItem="HhB-lP-axY" firstAttribute="centerX" secondItem="hp9-IA-3rr" secondAttribute="centerX" id="SCX-Vc-UAz"/>
+                            <constraint firstItem="igo-cg-H40" firstAttribute="top" secondItem="fmk-15-Ux3" secondAttribute="bottom" constant="2" id="env-Qs-4gt"/>
+                            <constraint firstItem="fmk-15-Ux3" firstAttribute="top" secondItem="aaI-mz-djP" secondAttribute="top" constant="67" id="fay-j5-m7V"/>
+                            <constraint firstItem="HhB-lP-axY" firstAttribute="centerY" secondItem="hp9-IA-3rr" secondAttribute="centerY" id="hNr-px-eti"/>
+                            <constraint firstItem="igo-cg-H40" firstAttribute="leading" secondItem="fmk-15-Ux3" secondAttribute="leading" id="jX5-ff-eox"/>
+                            <constraint firstItem="fmk-15-Ux3" firstAttribute="leading" secondItem="aaI-mz-djP" secondAttribute="leading" constant="57" id="mAH-2C-JTT"/>
+                            <constraint firstItem="HhB-lP-axY" firstAttribute="top" secondItem="igo-cg-H40" secondAttribute="bottom" constant="31" id="ohj-uP-SP6"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYP-TV-1co" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1889" y="84"/>
+            <point key="canvasLocation" x="-1889.8550724637682" y="83.705357142857139"/>
         </scene>
         <!--키워드 입력-->
         <scene sceneID="zco-nk-5pD">
