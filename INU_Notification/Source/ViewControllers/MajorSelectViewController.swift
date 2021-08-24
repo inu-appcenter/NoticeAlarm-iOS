@@ -18,6 +18,7 @@ class MajorSelectViewController: UIViewController {
     var isCollegeSelect: Bool = false
     var selectedButtonText: String?
     let cellID = "MajorSelectCell"
+    var status: EditStatus = .setMajor
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +62,7 @@ class MajorSelectViewController: UIViewController {
                   let majorButtonText = selectedButtonText else { return }
             
             let index = majorButtonText.index(majorButtonText.endIndex, offsetBy: -3)
-            let postRequest = APIRequest(endpoint: .editMajor)
+            let postRequest = APIRequest(endpoint: status)
             var message: Message = [:]
             let major: String
             if majorButtonText[index...] == "(야)" {
@@ -96,16 +97,11 @@ class MajorSelectViewController: UIViewController {
 class MajorSelectCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var collegeButton: UIButton!
-    
-    /**
-     Cell에 UIButton을 추가 및 레이아웃을 설정해주는 역할을 합니다.
-     */
-    //    private func setupView() {
-    //        contentView.addSubview(collegeButton)
-    //        collegeButton.snp.makeConstraints { maker in
-    //            maker.edges.equalToSuperview().inset(10)
-    //        }
-    //    }
+    override var isSelected: Bool {
+        didSet {
+            self.backgroundColor = isSelected ? .lightGray : .white
+        }
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
