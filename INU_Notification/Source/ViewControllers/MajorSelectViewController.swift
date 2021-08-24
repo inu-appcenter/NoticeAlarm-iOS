@@ -59,17 +59,10 @@ class MajorSelectViewController: UIViewController {
         } else { // 학과를 선택했을 경우
             let userDefault: UserDefaults = .standard
             guard let token = userDefault.string(forKey: "FCMToken"),
-                  let majorButtonText = selectedButtonText else { return }
+                  let major = selectedButtonText else { return }
             
-            let index = majorButtonText.index(majorButtonText.endIndex, offsetBy: -3)
             let postRequest = APIRequest(endpoint: status)
             var message: Message = [:]
-            let major: String
-            if majorButtonText[index...] == "(야)" {
-                major = String(majorButtonText[..<index]) // `(야)`를 없앰
-            } else {
-                major = majorButtonText
-            }
             
             message["token"] = token
             message["major"] = major
