@@ -59,7 +59,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-0Z-Heo">
-                                                    <rect key="frame" x="-10" y="21" width="343" height="55"/>
+                                                    <rect key="frame" x="8" y="21" width="307" height="55"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                     <state key="normal" title="Button">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,9 +68,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tCJ-0Z-Heo" firstAttribute="centerX" secondItem="TP3-up-aAC" secondAttribute="centerX" id="PwM-lS-SGr"/>
+                                                <constraint firstAttribute="bottom" secondItem="tCJ-0Z-Heo" secondAttribute="bottom" constant="21" id="boF-5s-pBc"/>
+                                                <constraint firstItem="tCJ-0Z-Heo" firstAttribute="leading" secondItem="TP3-up-aAC" secondAttribute="leading" constant="8" id="dQ5-tO-BLm"/>
                                                 <constraint firstItem="tCJ-0Z-Heo" firstAttribute="centerY" secondItem="TP3-up-aAC" secondAttribute="centerY" id="dqk-Pe-oxp"/>
                                                 <constraint firstItem="tCJ-0Z-Heo" firstAttribute="top" secondItem="TP3-up-aAC" secondAttribute="top" constant="21" id="iWn-aY-Pan"/>
-                                                <constraint firstItem="tCJ-0Z-Heo" firstAttribute="leading" secondItem="TP3-up-aAC" secondAttribute="leading" constant="-10" id="wDZ-bs-ecQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="tCJ-0Z-Heo" secondAttribute="trailing" constant="8" id="xFw-bA-CdU"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="323" height="97"/>
@@ -126,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3" y="57"/>
+            <point key="canvasLocation" x="-4.3478260869565224" y="56.919642857142854"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vPa-3v-0Pj">
