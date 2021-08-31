@@ -186,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="-949.27536231884062" y="774.77678571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="D12-Te-FUM">
             <objects>
-                <viewController id="KY8-vC-g84" sceneMemberID="viewController">
+                <viewController id="KY8-vC-g84" customClass="HomeViewController" customModule="INU_Notification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hp9-IA-3rr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
