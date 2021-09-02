@@ -21,7 +21,14 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         homeCollectionView.reloadData()
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextViewController: KeywordListViewController = segue.destination as? KeywordListViewController,
+              let cell: HomeKeywordCollectionViewCell = sender as? HomeKeywordCollectionViewCell else {
+            return
+        }
+        
+        nextViewController.keyword = cell.keywordButton.titleLabel?.text
+    }
 }
 
 
@@ -58,7 +65,6 @@ class HomeKeywordCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = frame.height / 4
         layer.borderWidth = 2
         layer.borderColor = UIColor(hex: "FEDE59").cgColor
-        
     }
     
     func configure(name: String?) {

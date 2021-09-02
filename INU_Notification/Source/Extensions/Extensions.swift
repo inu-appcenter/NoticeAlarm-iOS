@@ -228,7 +228,7 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
 }
 
 //MARK: - HomeViewController
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // 연산 프로퍼티 적용, 배열을 encode 하여 저장
     private var keywordArray: [String] {
@@ -258,4 +258,22 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         return cell
     }
+}
+
+//MARK: - AlarmListViewController
+extension KeywordListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 7
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? KeywordListCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.title.text = "2021-2학기 수강신청 일정 안내"
+        cell.content.text = "2021학년도 2학기 수강신청 일정을 아래와 같이 안내하오니 학생들이 해당기간내에 수강..."
+        return cell
+    }
+    
+    
 }
