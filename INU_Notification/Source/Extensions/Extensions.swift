@@ -271,8 +271,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
-//MARK: - AlarmListViewController
-extension KeywordListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//MARK: - KeywordListViewController
+extension KeywordListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 7
     }
@@ -286,5 +286,14 @@ extension KeywordListViewController: UICollectionViewDataSource, UICollectionVie
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let slideViewController = NoticeDetailViewController()
+        slideViewController.modalPresentationStyle = .custom
+        slideViewController.transitioningDelegate = self
+        self.present(slideViewController, animated: true, completion: nil)
+    }
     
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        PresentationController(presentedViewController: presented, presenting: presenting)
+    }
 }

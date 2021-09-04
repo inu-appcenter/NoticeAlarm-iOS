@@ -1,5 +1,5 @@
 //
-//  NoticeDetailController.swift
+//  PresentationController.swift
 //  INU_Notification
 //
 //  Created by 홍승현 on 2021/09/04.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NoticeDetailController: UIPresentationController {
+class PresentationController: UIPresentationController {
 
     let blurEffectView: UIVisualEffectView!
     var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
