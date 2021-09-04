@@ -194,7 +194,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-lP-axY">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-lP-axY">
                                 <rect key="frame" x="24" y="246" width="366" height="567"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iwR-y4-Tra">
@@ -278,7 +278,7 @@
                                     <constraint firstAttribute="height" constant="189" id="oDA-tB-iy1"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Uv-Qg-baB">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Uv-Qg-baB">
                                 <rect key="frame" x="19" y="224" width="376" height="589"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dNv-uS-mZb">
@@ -323,6 +323,7 @@
                                         <connections>
                                             <outlet property="content" destination="aYv-IW-O9B" id="ozO-Vp-vVs"/>
                                             <outlet property="title" destination="Vkn-aI-EfL" id="0NG-2K-ScX"/>
+                                            <segue destination="9gF-nJ-r46" kind="show" id="rMF-12-uq6"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -353,6 +354,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qq5-xb-8Dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2878.2608695652175" y="2329.6875"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wAT-9L-tNI">
+            <objects>
+                <viewController id="9gF-nJ-r46" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3AB-9D-heY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="O8l-za-76u"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nem-ZR-GdS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="arT-dG-zOj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2099" y="2330"/>
         </scene>
         <!--키워드 입력-->
         <scene sceneID="zco-nk-5pD">
