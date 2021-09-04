@@ -323,7 +323,6 @@
                                         <connections>
                                             <outlet property="content" destination="aYv-IW-O9B" id="ozO-Vp-vVs"/>
                                             <outlet property="title" destination="Vkn-aI-EfL" id="0NG-2K-ScX"/>
-                                            <segue destination="9gF-nJ-r46" kind="show" id="rMF-12-uq6"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -354,22 +353,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qq5-xb-8Dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2878.2608695652175" y="2329.6875"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="wAT-9L-tNI">
-            <objects>
-                <viewController id="9gF-nJ-r46" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3AB-9D-heY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="O8l-za-76u"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="nem-ZR-GdS"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="arT-dG-zOj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2099" y="2330"/>
         </scene>
         <!--키워드 입력-->
         <scene sceneID="zco-nk-5pD">

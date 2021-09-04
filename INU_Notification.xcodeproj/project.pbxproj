@@ -12,6 +12,7 @@
 		BA64B94626CD5C0C0074BC1C /* MajorSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2ED4326B28D63009EE656 /* MajorSelectViewController.swift */; };
 		BA6F83F226E0CA24007C7458 /* KeywordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F83F126E0CA24007C7458 /* KeywordListViewController.swift */; };
 		BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */; };
+		BA89A92126E3743A0085F480 /* NoticeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89A92026E3743A0085F480 /* NoticeDetailController.swift */; };
 		BA92C7C026B9539B001908BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92C7BF26B9539B001908BF /* Utils.swift */; };
 		BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BABF587C26B28EA500889C12 /* GoogleService-Info.plist */; };
 		BABF588726B29F5F00889C12 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF588626B29F5F00889C12 /* Extensions.swift */; };
@@ -28,6 +29,7 @@
 		BA3BF50226D68AEE00CD2183 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA6F83F126E0CA24007C7458 /* KeywordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeywordListViewController.swift; path = INU_Notification/Source/ViewControllers/KeywordListViewController.swift; sourceTree = SOURCE_ROOT; };
 		BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		BA89A92026E3743A0085F480 /* NoticeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeDetailController.swift; path = INU_Notification/Source/ViewControllers/NoticeDetailController.swift; sourceTree = SOURCE_ROOT; };
 		BA92C7BF26B9539B001908BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BABF587C26B28EA500889C12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BABF588626B29F5F00889C12 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		BABF588126B296CA00889C12 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BA89A92026E3743A0085F480 /* NoticeDetailController.swift */,
 				BAF2ED4326B28D63009EE656 /* MajorSelectViewController.swift */,
 				BA6F83F126E0CA24007C7458 /* KeywordListViewController.swift */,
 				BAFD38FB26B7DBCF007DBBF6 /* KeywordViewController.swift */,
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA89A92126E3743A0085F480 /* NoticeDetailController.swift in Sources */,
 				BAFD38FC26B7DBCF007DBBF6 /* KeywordViewController.swift in Sources */,
 				BABF588726B29F5F00889C12 /* Extensions.swift in Sources */,
 				BA64B94626CD5C0C0074BC1C /* MajorSelectViewController.swift in Sources */,
