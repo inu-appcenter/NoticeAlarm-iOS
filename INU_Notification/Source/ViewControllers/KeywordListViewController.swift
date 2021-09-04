@@ -33,7 +33,7 @@ class KeywordListViewController: UIViewController {
     }
     
     func keywordListCollectionViewConfigure() {
-        keywordListCollectionView.layer.cornerRadius = 2
+        keywordListCollectionView.layer.cornerRadius = 25
         keywordListCollectionView.layer.borderWidth = 1
         keywordListCollectionView.layer.borderColor = UIColor.clear.cgColor
         keywordListCollectionView.layer.masksToBounds = true
