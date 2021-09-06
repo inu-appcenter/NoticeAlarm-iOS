@@ -7,6 +7,17 @@
 
 import UIKit
 
+//MARK: - UIView
+extension UIView {
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners,
+                                cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+}
+
 // MARK: - UIColor
 extension UIColor {
     convenience init(hex: String, alpha: CGFloat = 1.0) {
@@ -224,5 +235,65 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
                 }
             }
         }
+    }
+}
+
+//MARK: - HomeViewController
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    // 연산 프로퍼티 적용, 배열을 encode 하여 저장
+    private var keywordArray: [String] {
+        get {
+            var keywords: [String]?
+            if let data = UserDefaults.standard.data(forKey: "keyword") {
+                keywords = try? PropertyListDecoder().decode([String].self, from: data)
+            }
+            return keywords ?? []
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return keywordArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: keywordCellID, for: indexPath) as? HomeKeywordCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.configure(name: keywordArray[indexPath.item])
+        if indexPath.item % 4 == 0 || indexPath.item % 4 == 3 {
+            cell.backgroundColor = UIColor(hex: "#FED630")
+            cell.layer.borderColor = UIColor(hex: "#FED630").cgColor
+        } else {
+            cell.backgroundColor = .none
+        }
+        return cell
+    }
+}
+
+//MARK: - KeywordListViewController
+extension KeywordListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 7
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? KeywordListCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.title.text = "2021-2학기 수강신청 일정 안내"
+        cell.content.text = "2021학년도 2학기 수강신청 일정을 아래와 같이 안내하오니 학생들이 해당기간내에 수강..."
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let slideViewController = NoticeDetailViewController()
+        slideViewController.modalPresentationStyle = .custom
+        slideViewController.transitioningDelegate = self
+        self.present(slideViewController, animated: true, completion: nil)
+    }
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        PresentationController(presentedViewController: presented, presenting: presenting)
     }
 }
