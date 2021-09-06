@@ -16,32 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ebb-un-5cF">
-                                <rect key="frame" x="152.5" y="225" width="109" height="96"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenLogo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AmF-ij-k0H">
+                                <rect key="frame" x="98" y="217.5" width="218" height="192"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="109" id="TFj-gh-ton"/>
-                                    <constraint firstAttribute="height" constant="96" id="pIP-Et-vHJ"/>
+                                    <constraint firstAttribute="width" constant="218" id="50g-MI-VJ2"/>
+                                    <constraint firstAttribute="height" constant="192" id="zxE-pp-7hs"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지알리미" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4R-gE-ypX">
-                                <rect key="frame" x="142" y="329" width="130" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="T4R-gE-ypX" firstAttribute="top" secondItem="Ebb-un-5cF" secondAttribute="bottom" constant="8" symbolic="YES" id="Ekg-uE-Qrh"/>
-                            <constraint firstItem="T4R-gE-ypX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Ewi-JW-fo4"/>
-                            <constraint firstItem="Ebb-un-5cF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TsD-NI-ZO0"/>
-                            <constraint firstItem="Ebb-un-5cF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="181" id="XHj-KZ-boZ"/>
+                            <constraint firstItem="AmF-ij-k0H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hiF-vc-cxd"/>
+                            <constraint firstItem="AmF-ij-k0H" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.7" id="tsF-2F-2uf"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="iconImageView" destination="Ebb-un-5cF" id="9VH-Rq-Blv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,7 +38,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppIcon.png" width="1024" height="1024"/>
+        <image name="LaunchScreenLogo" width="800" height="800"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
