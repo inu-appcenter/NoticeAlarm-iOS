@@ -22,7 +22,7 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcm-s8-ZXf">
                     <rect key="frame" x="0.0" y="547" width="414" height="64"/>
-                    <color key="backgroundColor" red="0.92133218049999999" green="0.44974637719999999" blue="0.41927981530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" red="0.078431372550000003" green="0.16862745100000001" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="lpl-dY-Sf8"/>
                     </constraints>
@@ -48,7 +48,7 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qjy-D0-rIz">
                     <rect key="frame" x="16" y="187.5" width="382" height="1"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.078431372549019607" green="0.16862745098039217" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="2jd-z9-cYg"/>
                     </constraints>
@@ -62,7 +62,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021학년도 8월 졸업예정자 영어졸업인증신청 오늘까지 마감이오니 해당학생은 필히 확인 바랍니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-a0-19S">
                                     <rect key="frame" x="0.0" y="0.0" width="330" height="64.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
