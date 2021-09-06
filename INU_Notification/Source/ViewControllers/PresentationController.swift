@@ -28,7 +28,7 @@ class PresentationController: UIPresentationController {
                size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 0.6))
     }
     
-    // 모달이 올라갈 때 뒷 배경을 처리해줌
+    // 모달이 올라갈 때 뒷 배경을 블러 처리해줌
     override func presentationTransitionWillBegin() {
         blurEffectView.alpha = 0
         containerView?.addSubview(blurEffectView)
@@ -37,6 +37,7 @@ class PresentationController: UIPresentationController {
         }, completion: nil)
     }
     
+    // 모달 없어질 때 배경을 다시 원래대로 만듦
     override func dismissalTransitionWillBegin() {
         presentedViewController.transitionCoordinator?.animate(alongsideTransition: { _ in
             self.blurEffectView.alpha = 0
@@ -59,7 +60,6 @@ class PresentationController: UIPresentationController {
     }
     
     @objc func dismissController() {
-        presentedViewController
-            .dismiss(animated: true, completion: nil)
+        presentedViewController.dismiss(animated: true, completion: nil)
     }
 }

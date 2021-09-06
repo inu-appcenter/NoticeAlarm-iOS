@@ -18,8 +18,6 @@ class NoticeDetailViewController: UIViewController {
         super.viewDidLoad()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         view.addGestureRecognizer(panGesture)
-        
-        
     }
     
     override func viewDidLayoutSubviews() {

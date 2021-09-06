@@ -52,24 +52,15 @@
                         <constraint firstAttribute="width" secondItem="L2f-XL-rxk" secondAttribute="height" multiplier="440:1" id="ajO-4A-poa"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQK-Ec-1NK">
-                    <rect key="frame" x="42" y="215" width="389" height="254"/>
-                    <viewLayoutGuide key="contentLayoutGuide" id="DWu-rU-1jc"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="cXN-RE-ls4"/>
-                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="g8q-g5-R8A" secondAttribute="trailing" id="E90-BN-VHh"/>
                 <constraint firstItem="97m-NX-IQg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="42" id="ERn-8h-bvn"/>
-                <constraint firstItem="QQK-Ec-1NK" firstAttribute="top" secondItem="L2f-XL-rxk" secondAttribute="bottom" constant="23" id="JTy-7h-sGU"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QQK-Ec-1NK" secondAttribute="trailing" constant="41" id="N36-qA-2Og"/>
                 <constraint firstItem="g8q-g5-R8A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OvF-ne-n2r"/>
-                <constraint firstItem="g8q-g5-R8A" firstAttribute="top" secondItem="QQK-Ec-1NK" secondAttribute="bottom" id="RaD-Lh-OpQ"/>
                 <constraint firstAttribute="trailing" secondItem="L2f-XL-rxk" secondAttribute="trailing" constant="16" id="TfP-iy-qmw"/>
                 <constraint firstItem="97m-NX-IQg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="53" id="Wnu-kW-pYI"/>
-                <constraint firstItem="QQK-Ec-1NK" firstAttribute="leading" secondItem="97m-NX-IQg" secondAttribute="leading" id="Y80-YD-lBQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="g8q-g5-R8A" secondAttribute="bottom" id="a9Q-DT-84z"/>
                 <constraint firstItem="L2f-XL-rxk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="cMM-2l-YYm"/>
                 <constraint firstItem="nO5-vc-EG8" firstAttribute="top" secondItem="97m-NX-IQg" secondAttribute="bottom" constant="17" id="urO-H6-q7n"/>
