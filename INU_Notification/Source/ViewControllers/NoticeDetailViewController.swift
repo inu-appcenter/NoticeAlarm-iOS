@@ -12,12 +12,15 @@ class NoticeDetailViewController: UIViewController {
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
     
+    @IBOutlet weak var lineIndicator: UIView!
     @IBOutlet weak var okButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         view.addGestureRecognizer(panGesture)
+        
+        lineIndicator.roundCorners(.allCorners, radius: 10)
     }
     
     override func viewDidLayoutSubviews() {

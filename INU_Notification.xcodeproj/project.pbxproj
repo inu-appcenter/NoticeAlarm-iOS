@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		BA2CEECD26C107ED0020900F /* Pods_INU_Notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */; };
 		BA3BF50326D68AEE00CD2183 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3BF50226D68AEE00CD2183 /* HomeViewController.swift */; };
+		BA48F40E26E647D300E2EC91 /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA48F40C26E647D300E2EC91 /* NoticeDetailViewController.swift */; };
+		BA48F40F26E647D300E2EC91 /* NoticeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA48F40D26E647D300E2EC91 /* NoticeDetailViewController.xib */; };
 		BA64B94626CD5C0C0074BC1C /* MajorSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2ED4326B28D63009EE656 /* MajorSelectViewController.swift */; };
 		BA6F83F226E0CA24007C7458 /* KeywordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F83F126E0CA24007C7458 /* KeywordListViewController.swift */; };
 		BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */; };
 		BA89A92126E3743A0085F480 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89A92026E3743A0085F480 /* PresentationController.swift */; };
-		BA89A92326E37DC50085F480 /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89A92226E37DC50085F480 /* NoticeDetailViewController.swift */; };
-		BA89A92726E398CF0085F480 /* NoticeDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA89A92626E398CF0085F480 /* NoticeDetail.xib */; };
 		BA92C7C026B9539B001908BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92C7BF26B9539B001908BF /* Utils.swift */; };
 		BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BABF587C26B28EA500889C12 /* GoogleService-Info.plist */; };
 		BABF588726B29F5F00889C12 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF588626B29F5F00889C12 /* Extensions.swift */; };
@@ -29,11 +29,11 @@
 /* Begin PBXFileReference section */
 		090E095EBBD84AFF4A835089 /* Pods-INU_Notification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INU_Notification.debug.xcconfig"; path = "Target Support Files/Pods-INU_Notification/Pods-INU_Notification.debug.xcconfig"; sourceTree = "<group>"; };
 		BA3BF50226D68AEE00CD2183 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BA48F40C26E647D300E2EC91 /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
+		BA48F40D26E647D300E2EC91 /* NoticeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeDetailViewController.xib; sourceTree = "<group>"; };
 		BA6F83F126E0CA24007C7458 /* KeywordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeywordListViewController.swift; path = INU_Notification/Source/ViewControllers/KeywordListViewController.swift; sourceTree = SOURCE_ROOT; };
 		BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BA89A92026E3743A0085F480 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentationController.swift; path = INU_Notification/Source/ViewControllers/PresentationController.swift; sourceTree = SOURCE_ROOT; };
-		BA89A92226E37DC50085F480 /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
-		BA89A92626E398CF0085F480 /* NoticeDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeDetail.xib; sourceTree = "<group>"; };
 		BA92C7BF26B9539B001908BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BABF587C26B28EA500889C12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BABF588626B29F5F00889C12 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -116,8 +116,8 @@
 				BA89A92026E3743A0085F480 /* PresentationController.swift */,
 				BAF2ED4326B28D63009EE656 /* MajorSelectViewController.swift */,
 				BA6F83F126E0CA24007C7458 /* KeywordListViewController.swift */,
-				BA89A92226E37DC50085F480 /* NoticeDetailViewController.swift */,
-				BA89A92626E398CF0085F480 /* NoticeDetail.xib */,
+				BA48F40C26E647D300E2EC91 /* NoticeDetailViewController.swift */,
+				BA48F40D26E647D300E2EC91 /* NoticeDetailViewController.xib */,
 				BAFD38FB26B7DBCF007DBBF6 /* KeywordViewController.swift */,
 				BA3BF50226D68AEE00CD2183 /* HomeViewController.swift */,
 			);
@@ -231,10 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF2ED4C26B28D64009EE656 /* LaunchScreen.storyboard in Resources */,
+				BA48F40F26E647D300E2EC91 /* NoticeDetailViewController.xib in Resources */,
 				BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */,
 				BAF2ED4926B28D64009EE656 /* Assets.xcassets in Resources */,
 				BAF2ED4726B28D63009EE656 /* Main.storyboard in Resources */,
-				BA89A92726E398CF0085F480 /* NoticeDetail.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +296,7 @@
 				BAF2ED4026B28D63009EE656 /* AppDelegate.swift in Sources */,
 				BAF2ED4226B28D63009EE656 /* SceneDelegate.swift in Sources */,
 				BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */,
-				BA89A92326E37DC50085F480 /* NoticeDetailViewController.swift in Sources */,
+				BA48F40E26E647D300E2EC91 /* NoticeDetailViewController.swift in Sources */,
 				BA92C7C026B9539B001908BF /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
