@@ -24,8 +24,8 @@ class PresentationController: UIPresentationController {
     }
     // 프레임 구성, 프레임 높이를 변경해서 얼만큼 present할 지 정할 수 있음
     override var frameOfPresentedViewInContainerView: CGRect {
-        CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.4),
-               size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 0.6))
+        CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.26),
+               size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height * 0.75))
     }
     
     // 모달이 올라갈 때 뒷 배경을 블러 처리해줌
