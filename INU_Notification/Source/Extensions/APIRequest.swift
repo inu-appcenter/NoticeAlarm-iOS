@@ -56,7 +56,6 @@ struct APIRequest {
                    responseData == "\"200\"" {
                     completion(.success(responseData))
                 } else {
-                    print(String(data: jsonData, encoding: .utf8)) // test code
                     completion(.failure(.decodingProblem))
                 }
             }
