@@ -24,7 +24,7 @@ struct APIRequest {
     let resourceURL: URL
     let httpMethod: String
     init(endpoint: EditStatus) {
-        guard let resourceURL = URL(string: "http://3.38.60.57:8001/\(endpoint.rawValue)") else {
+        guard let resourceURL = URL(string: "\(address)\(endpoint.rawValue)") else {
             fatalError()
         }
         self.resourceURL = resourceURL
