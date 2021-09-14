@@ -26,6 +26,7 @@ class MajorSelectViewController: UIViewController {
         completeButton.backgroundColor = UIColor(hex: "CCCCCC")
         
         selectCollectionView.dataSource = self
+        selectCollectionView.delegate = self
         
         let jsonDecoder: JSONDecoder = JSONDecoder()
         guard let dataAsset: NSDataAsset = NSDataAsset(name: "INU") else {
@@ -88,7 +89,7 @@ class MajorSelectViewController: UIViewController {
 }
 
 // MARK: - Extension
-extension MajorSelectViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
+extension MajorSelectViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let college = selectedButtonText,
            let dic =  majorDictionary[college] {
@@ -110,19 +111,14 @@ extension MajorSelectViewController: UICollectionViewDataSource, UICollectionVie
         }
         
         cell.configure(name: name)
-        cell.collegeButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
         return cell
     }
     
-    // 셀의 크기 설정
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return collectionView.contentSize
-    }
-    
-    // 셀 선택했을 때 동작되는 Action코드
-    @objc
-    func tapButton(sender: UIButton) {
-        selectedButtonText = sender.titleLabel?.text
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? MajorSelectCollectionViewCell else {
+            return
+        }
+        selectedButtonText = cell.collegeMajorLabel.text
         completeButton.isEnabled = true
         completeButton.backgroundColor = UIColor(hex: "142B6F")
     }
@@ -132,7 +128,7 @@ extension MajorSelectViewController: UICollectionViewDataSource, UICollectionVie
 
 class MajorSelectCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var collegeButton: UIButton!
+    @IBOutlet weak var collegeMajorLabel: UILabel!
     override var isSelected: Bool {
         didSet {
             self.backgroundColor = isSelected ? .lightGray : .white
@@ -148,7 +144,7 @@ class MajorSelectCollectionViewCell: UICollectionViewCell {
     
     func configure(name: String?) {
         guard let name = name else { return }
-        collegeButton.setTitle("\(name)", for: .normal)
-        collegeButton.setTitleColor(.black, for: .normal)
+        collegeMajorLabel.text = name
+        collegeMajorLabel.textColor = .black
     }
 }
