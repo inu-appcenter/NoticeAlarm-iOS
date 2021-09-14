@@ -99,6 +99,8 @@ iOSInjectionProject/
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 
+# Custom
+INU_Notification/Source/Extensions/Address.swift
 
 
 ## Gcc Patch
