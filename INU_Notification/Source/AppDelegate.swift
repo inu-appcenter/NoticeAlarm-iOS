@@ -11,45 +11,24 @@ import Firebase
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
-    let gcmMessageIDKey = "test"
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
-        
-        if #available(iOS 10.0, *) {
-            // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, _ in
+            guard success else {
+                return
+            }
+            print("Success in APNS registry")
             
-            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-            UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { success, _ in
-                guard success else {
-                    return
-                }
-                print("APN 레지스트리 성공")
-            }
-        } else {
-            let settings: UIUserNotificationSettings =
-                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(settings)
         }
-        
         application.registerForRemoteNotifications()
-        
-        Messaging.messaging().token { token, error in
-            if let error = error {
-                print("Error fetching FCM registration token: \(error)")
-            } else if let token = token {
-                print("Remote FCM registration token: \(token)")
-                UserDefaults.standard.set(token, forKey: "FCMToken")
-            }
-        }
         return true
     }
     
     // MARK: Messaging
-    
+
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         //        print("Firebase registration token: \(String(describing: fcmToken))")
         
@@ -59,6 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             object: nil,
             userInfo: dataDict
         )
+        messaging.token { token, error in
+            if let error = error {
+                print("Error fetching FCM registration token: \(error)")
+            } else if let token = token {
+                print("Remote FCM registration token: \(token)")
+                UserDefaults.standard.set(token, forKey: "FCMToken")
+            }
+        }
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
     }
@@ -75,13 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
                                     -> Void) {
         let userInfo = notification.request.content.userInfo
-        
+
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         // Messaging.messaging().appDidReceiveMessage(userInfo)
-        
+
         // Print full message.
+        print("FOREGROUNDMESSAGE")
         print(userInfo)
-        
+
         // Change this to your preferred presentation option
         completionHandler([[.banner, .list, .sound]])
     }
@@ -92,13 +80,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         // ...
-        
+
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         // Messaging.messaging().appDidReceiveMessage(userInfo)
-        
+
+        print("NOTIFICATION PUSH CLICKED")
         // Print full message.
         print(userInfo)
-        
+        print(userInfo["body"]) // Optional(테스트링크)
+        print(userInfo["keyword"]) // Optional(장학)
+        print(userInfo["title"]) // Optional(테스트장학)
+
         completionHandler()
     }
     
@@ -109,21 +101,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // If you are receiving a notification message while your app is in the background,
         // this callback will not be fired till the user taps on the notification launching the application.
         // TODO: Handle data of notification
-        
+
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         // Messaging.messaging().appDidReceiveMessage(userInfo)
-        
-        // Print message ID.
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        
         // Print full message.
-        // print(userInfo)
-        
+        print("WHAT IS THIS?")
+         print(userInfo)
+
         completionHandler(UIBackgroundFetchResult.newData)
     }
-    
-    
 }
-

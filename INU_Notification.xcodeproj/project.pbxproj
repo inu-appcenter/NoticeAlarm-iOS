@@ -14,6 +14,7 @@
 		BA64B94626CD5C0C0074BC1C /* MajorSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2ED4326B28D63009EE656 /* MajorSelectViewController.swift */; };
 		BA6F83F226E0CA24007C7458 /* KeywordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6F83F126E0CA24007C7458 /* KeywordListViewController.swift */; };
 		BA7AB26C26BFFEF000ABB823 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */; };
+		BA84341826EB8AAF0083D0AF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA84341726EB8AAF0083D0AF /* UIColor+Extension.swift */; };
 		BA89A92126E3743A0085F480 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA89A92026E3743A0085F480 /* PresentationController.swift */; };
 		BA92C7C026B9539B001908BF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92C7BF26B9539B001908BF /* Utils.swift */; };
 		BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BABF587C26B28EA500889C12 /* GoogleService-Info.plist */; };
@@ -33,6 +34,7 @@
 		BA48F40D26E647D300E2EC91 /* NoticeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeDetailViewController.xib; sourceTree = "<group>"; };
 		BA6F83F126E0CA24007C7458 /* KeywordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeywordListViewController.swift; path = INU_Notification/Source/ViewControllers/KeywordListViewController.swift; sourceTree = SOURCE_ROOT; };
 		BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		BA84341726EB8AAF0083D0AF /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BA89A92026E3743A0085F480 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentationController.swift; path = INU_Notification/Source/ViewControllers/PresentationController.swift; sourceTree = SOURCE_ROOT; };
 		BA92C7BF26B9539B001908BF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BABF587C26B28EA500889C12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				BA92C7BF26B9539B001908BF /* Utils.swift */,
 				BA7AB26B26BFFEF000ABB823 /* APIRequest.swift */,
 				BABF588626B29F5F00889C12 /* Extensions.swift */,
+				BA84341726EB8AAF0083D0AF /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				BA89A92126E3743A0085F480 /* PresentationController.swift in Sources */,
 				BAFD38FC26B7DBCF007DBBF6 /* KeywordViewController.swift in Sources */,
 				BABF588726B29F5F00889C12 /* Extensions.swift in Sources */,
+				BA84341826EB8AAF0083D0AF /* UIColor+Extension.swift in Sources */,
 				BA64B94626CD5C0C0074BC1C /* MajorSelectViewController.swift in Sources */,
 				BA3BF50326D68AEE00CD2183 /* HomeViewController.swift in Sources */,
 				BA6F83F226E0CA24007C7458 /* KeywordListViewController.swift in Sources */,
