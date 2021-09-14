@@ -8,7 +8,7 @@
 import UIKit
 
 class KeywordListViewController: UIViewController {
-
+    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var keywordLabel: UILabel!
     @IBOutlet weak var keywordListCollectionView: UICollectionView!
@@ -39,6 +39,36 @@ class KeywordListViewController: UIViewController {
         keywordListCollectionView.layer.masksToBounds = true
     }
 }
+// MARK: - Extension
+
+extension KeywordListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 7
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? KeywordListCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.title.text = "2021-2학기 수강신청 일정 안내"
+        cell.content.text = "2021학년도 2학기 수강신청 일정을 아래와 같이 안내하오니 학생들이 해당기간내에 수강..."
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let slideViewController = NoticeDetailViewController()
+        slideViewController.modalPresentationStyle = .custom
+        slideViewController.transitioningDelegate = self
+        self.present(slideViewController, animated: true, completion: nil)
+    }
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        PresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
+
+
+// MARK: - CollectionViewCell
 
 class KeywordListCollectionViewCell: UICollectionViewCell {
     

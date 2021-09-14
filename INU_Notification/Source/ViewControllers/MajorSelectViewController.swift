@@ -87,6 +87,49 @@ class MajorSelectViewController: UIViewController {
     }
 }
 
+// MARK: - Extension
+extension MajorSelectViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let college = selectedButtonText,
+           let dic =  majorDictionary[college] {
+            return dic.count
+        } else {
+            return majors.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? MajorSelectCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        var name: String?
+        if isCollegeSelect, let text = selectedButtonText {
+            name = majorDictionary[text]?[indexPath.item]
+        } else {
+            name = majors[indexPath.item].college
+        }
+        
+        cell.configure(name: name)
+        cell.collegeButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+        return cell
+    }
+    
+    // 셀의 크기 설정
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.contentSize
+    }
+    
+    // 셀 선택했을 때 동작되는 Action코드
+    @objc
+    func tapButton(sender: UIButton) {
+        selectedButtonText = sender.titleLabel?.text
+        completeButton.isEnabled = true
+        completeButton.backgroundColor = UIColor(hex: "142B6F")
+    }
+}
+
+// MARK: - CollectionViewCell
+
 class MajorSelectCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var collegeButton: UIButton!
