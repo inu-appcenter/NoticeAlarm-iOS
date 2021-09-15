@@ -41,6 +41,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlM-q5-aIp">
+                                <rect key="frame" x="0.0" y="774" width="414" height="64"/>
+                                <color key="backgroundColor" red="0.92133218050003052" green="0.44974637721883037" blue="0.41927981527031982" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="1yG-qW-g5m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveMajor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="53f-HV-Z2B"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aiA-gN-eHl">
                                 <rect key="frame" x="31" y="324" width="352" height="414"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -79,20 +93,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlM-q5-aIp">
-                                <rect key="frame" x="0.0" y="774" width="414" height="64"/>
-                                <color key="backgroundColor" red="0.92133218050003052" green="0.44974637721883037" blue="0.41927981527031982" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="1yG-qW-g5m"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="다음">
-                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveMajor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="53f-HV-Z2B"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -125,12 +125,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-149" y="84"/>
+            <point key="canvasLocation" x="-910" y="84"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="D12-Te-FUM">
             <objects>
-                <viewController id="KY8-vC-g84" customClass="HomeViewController" customModule="INU_Notification" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="KY8-vC-g84" customClass="HomeViewController" customModule="INU_Notification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hp9-IA-3rr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,7 +198,7 @@
         <!--Notice View Controller-->
         <scene sceneID="L0d-sj-O8a">
             <objects>
-                <viewController id="bfa-lE-dgf" customClass="NoticeViewController" customModule="INU_Notification" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoticeViewController" id="bfa-lE-dgf" customClass="NoticeViewController" customModule="INU_Notification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="czy-0b-HNk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -295,7 +295,7 @@
             </objects>
             <point key="canvasLocation" x="-2878.2608695652175" y="2329.6875"/>
         </scene>
-        <!--키워드 입력-->
+        <!--키워드-->
         <scene sceneID="zco-nk-5pD">
             <objects>
                 <viewController storyboardIdentifier="KeywordViewController" id="O7k-J8-2cB" customClass="KeywordViewController" customModule="INU_Notification" customModuleProvider="target" sceneMemberID="viewController">
@@ -353,7 +353,7 @@
                         <viewLayoutGuide key="safeArea" id="yrz-Nl-7Hz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="키워드 입력" image="key" catalog="system" id="veT-8B-my5"/>
+                    <tabBarItem key="tabBarItem" title="키워드" image="key" catalog="system" id="veT-8B-my5"/>
                     <navigationItem key="navigationItem" id="ecr-sN-Zqf"/>
                     <connections>
                         <outlet property="iconImageView" destination="KCK-i0-ryX" id="dhf-Cu-dmg"/>
