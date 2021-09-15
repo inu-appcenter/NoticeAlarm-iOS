@@ -51,13 +51,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Messaging.messaging().apnsToken = deviceToken
     }
     
+    // 앱이 Background에 있을 때 알림이 오면 해당 코드가 실행되는 듯 하다. 테스트 해보자!
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        Messaging.messaging().appDidReceiveMessage(userInfo)
+        
+        print("BACKGROUND NOTIFICATION DELIVERED.")
+        print(userInfo["body"]) // Optional(테스트링크)
+        print(userInfo["keyword"]) // Optional(장학)
+        print(userInfo["title"]) // Optional(테스트장학)
+    }
+    
     // 앱이 foreground에 있을 때 푸시 알림이 오면 이 메서드가 호출된다.
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
                                     -> Void) {
         let userInfo = notification.request.content.userInfo
-        print(userInfo)
+        
+        print("NOTIFICATION FOREGROUND")
+        
+        Messaging.messaging().appDidReceiveMessage(userInfo)
+        
+        print(userInfo["body"]) // Optional(테스트링크), 공지 링크
+        print(userInfo["keyword"]) // Optional(장학), 키워드
+        print(userInfo["title"]) // Optional(테스트장학), 제목
         
         // Change this to your preferred presentation option
         completionHandler([[.banner, .list, .sound]])
@@ -69,11 +87,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         print("NOTIFICATION PUSH CLICKED")
+        
+        Messaging.messaging().appDidReceiveMessage(userInfo)
+        
         // Print full message.
         print(userInfo)
-        print(userInfo["body"]!) // Optional(테스트링크)
-        print(userInfo["keyword"]!) // Optional(장학)
-        print(userInfo["title"]!) // Optional(테스트장학)
+        print(userInfo["body"]) // Optional(테스트링크)
+        print(userInfo["keyword"]) // Optional(장학)
+        print(userInfo["title"]) // Optional(테스트장학)
         
         completionHandler()
     }

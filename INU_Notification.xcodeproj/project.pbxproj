@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0AA4EA26F1F5680013346E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA0AA4EC26F1F5680013346E /* InfoPlist.strings */; };
 		BA2CEECD26C107ED0020900F /* Pods_INU_Notification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3106C90C74C76464D8366DD /* Pods_INU_Notification.framework */; };
 		BA3BF50326D68AEE00CD2183 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3BF50226D68AEE00CD2183 /* HomeViewController.swift */; };
 		BA48F40E26E647D300E2EC91 /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA48F40C26E647D300E2EC91 /* NoticeDetailViewController.swift */; };
@@ -29,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		090E095EBBD84AFF4A835089 /* Pods-INU_Notification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INU_Notification.debug.xcconfig"; path = "Target Support Files/Pods-INU_Notification/Pods-INU_Notification.debug.xcconfig"; sourceTree = "<group>"; };
+		BA0AA4E626F1F5070013346E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		BA0AA4E726F1F5070013346E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BA0AA4EB26F1F5680013346E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BA0AA4EF26F1F6C40013346E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BA3BF50226D68AEE00CD2183 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA48F40C26E647D300E2EC91 /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
 		BA48F40D26E647D300E2EC91 /* NoticeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeDetailViewController.xib; sourceTree = "<group>"; };
@@ -147,6 +152,7 @@
 		BAF2ED3326B28D63009EE656 = {
 			isa = PBXGroup;
 			children = (
+				BA0AA4EC26F1F5680013346E /* InfoPlist.strings */,
 				BAF2ED3E26B28D63009EE656 /* INU_Notification */,
 				BAF2ED3D26B28D63009EE656 /* Products */,
 				3712D3A58EC0D072014D3CFD /* Pods */,
@@ -217,6 +223,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = BAF2ED3326B28D63009EE656;
 			productRefGroup = BAF2ED3D26B28D63009EE656 /* Products */;
@@ -234,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF2ED4C26B28D64009EE656 /* LaunchScreen.storyboard in Resources */,
+				BA0AA4EA26F1F5680013346E /* InfoPlist.strings in Resources */,
 				BA48F40F26E647D300E2EC91 /* NoticeDetailViewController.xib in Resources */,
 				BABF587D26B28EA500889C12 /* GoogleService-Info.plist in Resources */,
 				BAF2ED4926B28D64009EE656 /* Assets.xcassets in Resources */,
@@ -308,10 +316,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BA0AA4EC26F1F5680013346E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA0AA4EB26F1F5680013346E /* ko */,
+				BA0AA4EF26F1F6C40013346E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		BAF2ED4526B28D63009EE656 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BAF2ED4626B28D63009EE656 /* Base */,
+				BA0AA4E626F1F5070013346E /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -320,6 +338,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BAF2ED4B26B28D64009EE656 /* Base */,
+				BA0AA4E726F1F5070013346E /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -331,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -392,6 +412,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

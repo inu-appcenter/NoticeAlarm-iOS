@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "test"; ObjectID = "4fh-6c-k3V"; */
+"4fh-6c-k3V.text" = "test";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "L7L-bS-kb7"; */
+"L7L-bS-kb7.text" = "Label";
+
+/* Class = "UILabel"; text = "오신 것을 환영합니다!"; ObjectID = "ULC-cm-NHe"; */
+"ULC-cm-NHe.text" = "오신 것을 환영합니다!";
+
+/* Class = "UIButton"; normalTitle = "다음"; ObjectID = "UlM-q5-aIp"; */
+"UlM-q5-aIp.normalTitle" = "다음";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Vkn-aI-EfL"; */
+"Vkn-aI-EfL.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aYv-IW-O9B"; */
+"aYv-IW-O9B.text" = "Label";
+
+/* Class = "UILabel"; text = "등록키워드"; ObjectID = "ahL-uC-rwN"; */
+"ahL-uC-rwN.text" = "등록키워드";
+
+/* Class = "UILabel"; text = "인천대학교"; ObjectID = "fmk-15-Ux3"; */
+"fmk-15-Ux3.text" = "인천대학교";
+
+/* Class = "UILabel"; text = "학과 키워드 알림에"; ObjectID = "geb-sT-FdW"; */
+"geb-sT-FdW.text" = "학과 키워드 알림에";
+
+/* Class = "UILabel"; text = "학과키워드 알림"; ObjectID = "igo-cg-H40"; */
+"igo-cg-H40.text" = "학과키워드 알림";
+
+/* Class = "UILabel"; text = "인기키워드"; ObjectID = "m7X-cY-ZQR"; */
+"m7X-cY-ZQR.text" = "인기키워드";
+
+/* Class = "UITabBarItem"; title = "홈"; ObjectID = "nnw-Ze-Aq9"; */
+"nnw-Ze-Aq9.title" = "홈";
+
+/* Class = "UITabBarItem"; title = "학과 선택"; ObjectID = "oqp-G6-jZk"; */
+"oqp-G6-jZk.title" = "학과 선택";
+
+/* Class = "UITabBarItem"; title = "키워드 입력"; ObjectID = "veT-8B-my5"; */
+"veT-8B-my5.title" = "키워드 입력";
+
+/* Class = "UILabel"; text = "인천대학교"; ObjectID = "yCs-iH-Bdf"; */
+"yCs-iH-Bdf.text" = "인천대학교";
+
+/* Class = "UILabel"; text = "단과대학을 선택해주세요"; ObjectID = "ybf-Zk-4ks"; */
+"ybf-Zk-4ks.text" = "단과대학을 선택해주세요";
