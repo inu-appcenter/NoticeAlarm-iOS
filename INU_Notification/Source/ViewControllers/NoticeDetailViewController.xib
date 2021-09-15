@@ -13,6 +13,7 @@
                 <outlet property="lineIndicator" destination="qjy-D0-rIz" id="NM5-96-SAk"/>
                 <outlet property="okButton" destination="Fcm-s8-ZXf" id="13O-ih-c8X"/>
                 <outlet property="view" destination="iN0-l3-epB" id="opn-YC-DFv"/>
+                <outlet property="webView" destination="brG-Bs-7zm" id="irn-R0-77s"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -53,51 +54,26 @@
                         <constraint firstAttribute="height" constant="1" id="2jd-z9-cYg"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0M-BS-v0I">
-                    <rect key="frame" x="42" y="211.5" width="330" height="327.5"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Nv-ga-PWQ">
-                            <rect key="frame" x="0.0" y="0.0" width="330" height="65"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021학년도 8월 졸업예정자 영어졸업인증신청 오늘까지 마감이오니 해당학생은 필히 확인 바랍니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-a0-19S">
-                                    <rect key="frame" x="0.0" y="0.0" width="330" height="64.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                    <color key="textColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="4eE-a0-19S" secondAttribute="trailing" id="92i-np-cpk"/>
-                                <constraint firstItem="4eE-a0-19S" firstAttribute="top" secondItem="0Nv-ga-PWQ" secondAttribute="top" id="J8F-qN-dee"/>
-                                <constraint firstItem="4eE-a0-19S" firstAttribute="leading" secondItem="0Nv-ga-PWQ" secondAttribute="leading" id="Kr1-b6-IA1"/>
-                                <constraint firstAttribute="bottom" secondItem="4eE-a0-19S" secondAttribute="bottom" id="yQL-tF-PBN"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="NJp-nb-pCH" firstAttribute="bottom" secondItem="0Nv-ga-PWQ" secondAttribute="bottom" id="DxW-sR-c4i"/>
-                        <constraint firstItem="NJp-nb-pCH" firstAttribute="trailing" secondItem="0Nv-ga-PWQ" secondAttribute="trailing" id="Y5O-IZ-tdo"/>
-                        <constraint firstItem="0Nv-ga-PWQ" firstAttribute="leading" secondItem="NJp-nb-pCH" secondAttribute="leading" id="mb7-Qf-Uuq"/>
-                        <constraint firstItem="0Nv-ga-PWQ" firstAttribute="width" secondItem="GeR-vd-jEK" secondAttribute="width" id="naS-zW-tbC"/>
-                        <constraint firstItem="0Nv-ga-PWQ" firstAttribute="top" secondItem="NJp-nb-pCH" secondAttribute="top" id="ql7-XW-ngr"/>
-                    </constraints>
-                    <viewLayoutGuide key="contentLayoutGuide" id="NJp-nb-pCH"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="GeR-vd-jEK"/>
-                </scrollView>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brG-Bs-7zm">
+                    <rect key="frame" x="42" y="210.5" width="330" height="328.5"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Fcm-s8-ZXf" secondAttribute="trailing" id="1iB-Z1-jWP"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="f0M-BS-v0I" secondAttribute="trailing" constant="42" id="9mZ-s4-dIN"/>
                 <constraint firstItem="Fcm-s8-ZXf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HWB-4s-uza"/>
-                <constraint firstItem="f0M-BS-v0I" firstAttribute="leading" secondItem="pOp-Pd-jhn" secondAttribute="leading" id="IOe-Jp-z2W"/>
-                <constraint firstItem="f0M-BS-v0I" firstAttribute="top" secondItem="qjy-D0-rIz" secondAttribute="bottom" constant="23" id="Ugp-z3-b5e"/>
+                <constraint firstItem="brG-Bs-7zm" firstAttribute="top" secondItem="qjy-D0-rIz" secondAttribute="bottom" constant="22" id="UvB-cj-Sn0"/>
                 <constraint firstItem="g5Q-i7-Wl4" firstAttribute="top" secondItem="pOp-Pd-jhn" secondAttribute="bottom" constant="17" id="WTN-ba-Cvo"/>
+                <constraint firstItem="Fcm-s8-ZXf" firstAttribute="top" secondItem="brG-Bs-7zm" secondAttribute="bottom" constant="8" id="cOE-s1-U4w"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="brG-Bs-7zm" secondAttribute="trailing" constant="42" id="cch-ma-Wy4"/>
                 <constraint firstItem="Fcm-s8-ZXf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dp0-mi-dpB"/>
                 <constraint firstItem="pOp-Pd-jhn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="42" id="ecC-YF-pDz"/>
-                <constraint firstItem="Fcm-s8-ZXf" firstAttribute="top" secondItem="f0M-BS-v0I" secondAttribute="bottom" constant="8" id="hbs-FV-dnh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Fcm-s8-ZXf" secondAttribute="bottom" constant="24" id="ipe-fV-zUg"/>
                 <constraint firstItem="qjy-D0-rIz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kK1-IG-J3t"/>
                 <constraint firstItem="g5Q-i7-Wl4" firstAttribute="leading" secondItem="pOp-Pd-jhn" secondAttribute="leading" id="lck-qg-ZK5"/>
@@ -105,6 +81,7 @@
                 <constraint firstAttribute="trailing" secondItem="qjy-D0-rIz" secondAttribute="trailing" constant="16" id="pLU-ri-SPe"/>
                 <constraint firstItem="qjy-D0-rIz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="pT3-F2-uf1"/>
                 <constraint firstItem="pOp-Pd-jhn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="53" id="tDY-uH-lEP"/>
+                <constraint firstItem="brG-Bs-7zm" firstAttribute="leading" secondItem="pOp-Pd-jhn" secondAttribute="leading" id="y6h-bf-PfB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-10.144927536231885" y="181.80803571428569"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 class NoticeDetailViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class NoticeDetailViewController: UIViewController {
     
     @IBOutlet weak var lineIndicator: UIView!
     @IBOutlet weak var okButton: UIButton!
+    @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,8 @@ class NoticeDetailViewController: UIViewController {
         view.addGestureRecognizer(panGesture)
         
         lineIndicator.roundCorners(.allCorners, radius: 10)
+        
+        webView.load(URLRequest(url: URL(string: "https://www.naver.com/")!))
     }
     
     override func viewDidLayoutSubviews() {
