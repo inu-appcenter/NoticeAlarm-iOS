@@ -51,16 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Messaging.messaging().apnsToken = deviceToken
     }
     
-    // 앱이 Background에 있을 때 알림이 오면 해당 코드가 실행되는 듯 하다. 테스트 해보자!
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
-        Messaging.messaging().appDidReceiveMessage(userInfo)
-        
-        print("BACKGROUND NOTIFICATION DELIVERED.")
-        print(userInfo["body"]) // Optional(테스트링크)
-        print(userInfo["keyword"]) // Optional(장학)
-        print(userInfo["title"]) // Optional(테스트장학)
-    }
+    // 앱이 Background에 있을 때 알림이 오면 콜백되는 함수가 필요한데.. 없어보인다.
     
     // 앱이 foreground에 있을 때 푸시 알림이 오면 이 메서드가 호출된다.
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -97,5 +88,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print(userInfo["title"]) // Optional(테스트장학)
         
         completionHandler()
+    }
+    
+    private func tableViewProcessing() {
+        
     }
 }

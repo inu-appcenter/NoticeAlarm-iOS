@@ -195,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="-2878" y="1584"/>
         </scene>
-        <!--Keyword List View Controller-->
+        <!--Notice View Controller-->
         <scene sceneID="L0d-sj-O8a">
             <objects>
-                <viewController id="bfa-lE-dgf" customClass="KeywordListViewController" customModule="INU_Notification" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bfa-lE-dgf" customClass="NoticeViewController" customModule="INU_Notification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="czy-0b-HNk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

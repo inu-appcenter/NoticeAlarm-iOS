@@ -7,7 +7,7 @@
 
 import UIKit
 
-class KeywordListViewController: UIViewController {
+class NoticeViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var keywordLabel: UILabel!
@@ -41,7 +41,7 @@ class KeywordListViewController: UIViewController {
 }
 // MARK: - Extension
 
-extension KeywordListViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate {
+extension NoticeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 7
     }

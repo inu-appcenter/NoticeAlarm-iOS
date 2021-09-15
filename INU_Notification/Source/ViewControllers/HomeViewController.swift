@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         homeCollectionView.reloadData()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let nextViewController: KeywordListViewController = segue.destination as? KeywordListViewController,
+        guard let nextViewController: NoticeViewController = segue.destination as? NoticeViewController,
               let cell: HomeKeywordCollectionViewCell = sender as? HomeKeywordCollectionViewCell else {
             return
         }
