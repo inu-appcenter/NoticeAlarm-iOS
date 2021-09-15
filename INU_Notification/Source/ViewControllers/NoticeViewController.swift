@@ -57,7 +57,8 @@ class NoticeViewController: UIViewController {
 
 extension NoticeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return noticeArray.count
+        return 7
+//        return noticeArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -65,10 +66,10 @@ extension NoticeViewController: UICollectionViewDataSource, UICollectionViewDele
             return UICollectionViewCell()
         }
         
-//        cell.title.text = "2021-2학기 수강신청 일정 안내"
-//        cell.content.text = "2021학년도 2학기 수강신청 일정을 아래와 같이 안내하오니 학생들이 해당기간내에 수강..."
-        cell.title.text = noticeArray[indexPath.item].title
-        cell.content.text = noticeArray[indexPath.item].url
+        cell.title.text = "2021-2학기 수강신청 일정 안내"
+        cell.content.text = "2021학년도 2학기 수강신청 일정을 아래와 같이 안내하오니 학생들이 해당기간내에 수강..."
+//        cell.title.text = noticeArray[indexPath.item].title
+//        cell.content.text = noticeArray[indexPath.item].url
         return cell
     }
     
