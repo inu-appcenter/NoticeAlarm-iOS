@@ -11,13 +11,25 @@ import SnapKit
 class KeywordViewController: UIViewController {
     
     @IBOutlet weak var keywordTextField: UITextField!
-    @IBOutlet weak var selectMajorButton: UIButton!
     @IBOutlet weak var registerKeywordLabel: UILabel!
     @IBOutlet weak var popularKeywordLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var registerKeywordsCollectionView: UICollectionView!
     
-    let cellID: String = "registerKeywordCell"
+    private let cellID: String = "registerKeywordCell"
+    // 연산 프로퍼티 적용, 배열을 encode 하여 저장
+    private var keywordArray: [String] {
+        get {
+            var keywords: [String]?
+            if let data = UserDefaults.standard.data(forKey: "keyword") {
+                keywords = try? PropertyListDecoder().decode([String].self, from: data)
+            }
+            return keywords ?? []
+        }
+        set {
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: "keyword")
+        }
+    }
     
     
     //MARK: - App Cycle Part
@@ -107,20 +119,6 @@ class KeywordViewController: UIViewController {
 // MARK: - Extension
 
 extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
-    
-    // 연산 프로퍼티 적용, 배열을 encode 하여 저장
-    private var keywordArray: [String] {
-        get {
-            var keywords: [String]?
-            if let data = UserDefaults.standard.data(forKey: "keyword") {
-                keywords = try? PropertyListDecoder().decode([String].self, from: data)
-            }
-            return keywords ?? []
-        }
-        set {
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: "keyword")
-        }
-    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

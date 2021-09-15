@@ -10,8 +10,17 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeCollectionView: UICollectionView!
-    let keywordCellID: String = "HomeKeywordCell"
-    
+    private let keywordCellID: String = "HomeKeywordCell"
+    // 연산 프로퍼티 적용, 배열을 encode 하여 저장
+    private var keywordArray: [String] {
+        get {
+            var keywords: [String]?
+            if let data = UserDefaults.standard.data(forKey: "keyword") {
+                keywords = try? PropertyListDecoder().decode([String].self, from: data)
+            }
+            return keywords ?? []
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.dataSource = self
@@ -33,17 +42,6 @@ class HomeViewController: UIViewController {
 
 //MARK: - Extension
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    // 연산 프로퍼티 적용, 배열을 encode 하여 저장
-    private var keywordArray: [String] {
-        get {
-            var keywords: [String]?
-            if let data = UserDefaults.standard.data(forKey: "keyword") {
-                keywords = try? PropertyListDecoder().decode([String].self, from: data)
-            }
-            return keywords ?? []
-        }
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return keywordArray.count
