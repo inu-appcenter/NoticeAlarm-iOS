@@ -20,6 +20,23 @@ struct Major: Codable {
     let major: [String]
 }
 
+/**
+ 공지를 보여줄 때 필요한 구조체
+ 
+ title: 공지 제목입니다.
+ 
+ url: 공지`url`이 들어가 있습니다.
+ 
+ 
+- Note:
+    공지가 올라온 시간이나 일부 내용도 넣고싶은데 안될 듯 ㅜ
+
+ */
+struct Notice: Codable {
+    let title: String
+    let url: String
+}
+
 
 /**
     단순한 Alert 창인 AlertController를 리턴하는 메소드입니다.

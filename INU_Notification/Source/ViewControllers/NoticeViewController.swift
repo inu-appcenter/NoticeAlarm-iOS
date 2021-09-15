@@ -13,7 +13,21 @@ class NoticeViewController: UIViewController {
     @IBOutlet weak var keywordLabel: UILabel!
     @IBOutlet weak var keywordListCollectionView: UICollectionView!
     var keyword: String?
-    let cellID: String = "keywordListCell"
+    private let cellID: String = "noticeListCell"
+    // 연산 프로퍼티 적용, 배열을 encode 하여 저장
+    private var noticeArray: [Notice] {
+        get {
+            var notices: [Notice]?
+            if let data = UserDefaults.standard.data(forKey: keyword!) {
+                notices = try? PropertyListDecoder().decode([Notice].self, from: data)
+            }
+            return notices ?? []
+        }
+        set {
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: keyword!)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         keywordListCollectionView.delegate = self
@@ -43,15 +57,18 @@ class NoticeViewController: UIViewController {
 
 extension NoticeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return noticeArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? KeywordListCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.title.text = "2021-2학기 수강신청 일정 안내"
-        cell.content.text = "2021학년도 2학기 수강신청 일정을 아래와 같이 안내하오니 학생들이 해당기간내에 수강..."
+        
+//        cell.title.text = "2021-2학기 수강신청 일정 안내"
+//        cell.content.text = "2021학년도 2학기 수강신청 일정을 아래와 같이 안내하오니 학생들이 해당기간내에 수강..."
+        cell.title.text = noticeArray[indexPath.item].title
+        cell.content.text = noticeArray[indexPath.item].url
         return cell
     }
     

@@ -60,13 +60,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                     -> Void) {
         let userInfo = notification.request.content.userInfo
         
-        print("NOTIFICATION FOREGROUND")
-        
         Messaging.messaging().appDidReceiveMessage(userInfo)
         
+        print("NOTIFICATION FOREGROUND")
         print(userInfo["body"]) // Optional(테스트링크), 공지 링크
         print(userInfo["keyword"]) // Optional(장학), 키워드
         print(userInfo["title"]) // Optional(테스트장학), 제목
+        noticeProcessing(userInfo)
         
         // Change this to your preferred presentation option
         completionHandler([[.banner, .list, .sound]])
@@ -77,20 +77,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
-        print("NOTIFICATION PUSH CLICKED")
         
         Messaging.messaging().appDidReceiveMessage(userInfo)
         
-        // Print full message.
-        print(userInfo)
+        print("NOTIFICATION PUSH CLICKED")
         print(userInfo["body"]) // Optional(테스트링크)
         print(userInfo["keyword"]) // Optional(장학)
         print(userInfo["title"]) // Optional(테스트장학)
-        
+        noticeProcessing(userInfo)
         completionHandler()
     }
     
-    private func tableViewProcessing() {
+    private func noticeProcessing(_ userInfo: [AnyHashable : Any]) {
+        guard let url: String = userInfo["body"] as? String,
+              let keyword: String = userInfo["keyword"] as? String,
+              let title: String = userInfo["title"] as? String else {
+            return
+        }
+        var noticeArray: [Notice] {
+            get {
+                var keywords: [Notice]?
+                if let data = UserDefaults.standard.data(forKey: keyword) {
+                    keywords = try? PropertyListDecoder().decode([Notice].self, from: data)
+                }
+                return keywords ?? []
+            }
+            set {
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: keyword)
+            }
+        }
+        let notice: Notice = Notice(title: title, url: url)
+        noticeArray.append(notice)
         
     }
 }

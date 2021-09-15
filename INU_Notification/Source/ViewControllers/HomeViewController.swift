@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
             return keywords ?? []
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.dataSource = self
@@ -32,11 +33,12 @@ class HomeViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let nextViewController: NoticeViewController = segue.destination as? NoticeViewController,
-              let cell: HomeKeywordCollectionViewCell = sender as? HomeKeywordCollectionViewCell else {
+              let cell: HomeKeywordCollectionViewCell = sender as? HomeKeywordCollectionViewCell,
+              let keyword: String  = cell.keywordButton.titleLabel?.text else {
             return
         }
         
-        nextViewController.keyword = cell.keywordButton.titleLabel?.text
+        nextViewController.keyword = keyword
     }
 }
 
