@@ -47,7 +47,7 @@ class NoticeViewController: UIViewController {
     }
     
     func keywordListCollectionViewConfigure() {
-        keywordListCollectionView.layer.cornerRadius = 25
+        keywordListCollectionView.layer.cornerRadius = 16.6666
         keywordListCollectionView.layer.borderWidth = 1
         keywordListCollectionView.layer.borderColor = UIColor.clear.cgColor
         keywordListCollectionView.layer.masksToBounds = true
@@ -97,7 +97,7 @@ class KeywordListCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = frame.height / 4
+        layer.cornerRadius = frame.height / 6
         layer.borderWidth = 2
         layer.borderColor = UIColor(hex: "#FED630").cgColor
     }
