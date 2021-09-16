@@ -11,7 +11,7 @@ class NoticeViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var keywordLabel: UILabel!
-    @IBOutlet weak var keywordListCollectionView: UICollectionView!
+    @IBOutlet weak var noticeListCollectionView: UICollectionView!
     var keyword: String?
     private let cellID: String = "noticeListCell"
     // 연산 프로퍼티 적용, 배열을 encode 하여 저장
@@ -30,8 +30,8 @@ class NoticeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        keywordListCollectionView.delegate = self
-        keywordListCollectionView.dataSource = self
+        noticeListCollectionView.delegate = self
+        noticeListCollectionView.dataSource = self
         backgroundView.layer.zPosition = -1
         keywordLabelConfigure()
         keywordListCollectionViewConfigure()
@@ -47,10 +47,10 @@ class NoticeViewController: UIViewController {
     }
     
     func keywordListCollectionViewConfigure() {
-        keywordListCollectionView.layer.cornerRadius = 16.6666
-        keywordListCollectionView.layer.borderWidth = 1
-        keywordListCollectionView.layer.borderColor = UIColor.clear.cgColor
-        keywordListCollectionView.layer.masksToBounds = true
+        noticeListCollectionView.layer.cornerRadius = 16.6666
+        noticeListCollectionView.layer.borderWidth = 1
+        noticeListCollectionView.layer.borderColor = UIColor.clear.cgColor
+        noticeListCollectionView.layer.masksToBounds = true
     }
 }
 // MARK: - Extension

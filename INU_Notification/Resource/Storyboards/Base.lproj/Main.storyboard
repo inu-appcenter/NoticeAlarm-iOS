@@ -289,7 +289,7 @@
                     <connections>
                         <outlet property="backgroundView" destination="vMX-rP-qYF" id="NNJ-8b-w8S"/>
                         <outlet property="keywordLabel" destination="4fh-6c-k3V" id="n6Y-XM-9CX"/>
-                        <outlet property="keywordListCollectionView" destination="5Uv-Qg-baB" id="RMP-NG-0Ir"/>
+                        <outlet property="noticeListCollectionView" destination="5Uv-Qg-baB" id="RMP-NG-0Ir"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qq5-xb-8Dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
