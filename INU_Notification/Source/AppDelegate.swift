@@ -106,8 +106,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: keyword)
             }
         }
-        let notice: Notice = Notice(title: title, url: url)
+        let now: Date = Date()
+        let date: DateFormatter = DateFormatter()
+        date.dateFormat = "yyyy.MM.dd"
+        let time = date.string(from: now)
+        let notice: Notice = Notice(title: title, time: time, url: url)
         noticeArray.append(notice)
-        
     }
 }

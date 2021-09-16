@@ -13,6 +13,7 @@ class NoticeDetailViewController: UIViewController {
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
     
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lineIndicator: UIView!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var webView: WKWebView!

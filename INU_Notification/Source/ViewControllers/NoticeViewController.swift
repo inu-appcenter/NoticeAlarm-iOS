@@ -75,6 +75,7 @@ extension NoticeViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let slideViewController = NoticeDetailViewController()
+        slideViewController.dateLabel.text = noticeArray[indexPath.item].time
         slideViewController.modalPresentationStyle = .custom
         slideViewController.transitioningDelegate = self
         self.present(slideViewController, animated: true, completion: nil)

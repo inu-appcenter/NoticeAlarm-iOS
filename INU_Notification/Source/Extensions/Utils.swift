@@ -34,6 +34,7 @@ struct Major: Codable {
  */
 struct Notice: Codable {
     let title: String
+    let time: String
     let url: String
 }
 
