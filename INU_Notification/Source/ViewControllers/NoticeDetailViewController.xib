@@ -55,7 +55,7 @@
                     </constraints>
                 </view>
                 <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brG-Bs-7zm">
-                    <rect key="frame" x="42" y="210.5" width="330" height="328.5"/>
+                    <rect key="frame" x="0.0" y="210.5" width="414" height="328.5"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -67,21 +67,21 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Fcm-s8-ZXf" secondAttribute="trailing" id="1iB-Z1-jWP"/>
+                <constraint firstItem="brG-Bs-7zm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GTH-uq-Awt"/>
                 <constraint firstItem="Fcm-s8-ZXf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HWB-4s-uza"/>
                 <constraint firstItem="brG-Bs-7zm" firstAttribute="top" secondItem="qjy-D0-rIz" secondAttribute="bottom" constant="22" id="UvB-cj-Sn0"/>
                 <constraint firstItem="g5Q-i7-Wl4" firstAttribute="top" secondItem="pOp-Pd-jhn" secondAttribute="bottom" constant="17" id="WTN-ba-Cvo"/>
                 <constraint firstItem="Fcm-s8-ZXf" firstAttribute="top" secondItem="brG-Bs-7zm" secondAttribute="bottom" constant="8" id="cOE-s1-U4w"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="brG-Bs-7zm" secondAttribute="trailing" constant="42" id="cch-ma-Wy4"/>
                 <constraint firstItem="Fcm-s8-ZXf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dp0-mi-dpB"/>
                 <constraint firstItem="pOp-Pd-jhn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="42" id="ecC-YF-pDz"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Fcm-s8-ZXf" secondAttribute="bottom" constant="24" id="ipe-fV-zUg"/>
                 <constraint firstItem="qjy-D0-rIz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kK1-IG-J3t"/>
                 <constraint firstItem="g5Q-i7-Wl4" firstAttribute="leading" secondItem="pOp-Pd-jhn" secondAttribute="leading" id="lck-qg-ZK5"/>
                 <constraint firstItem="qjy-D0-rIz" firstAttribute="top" secondItem="g5Q-i7-Wl4" secondAttribute="bottom" constant="25" id="mvO-Gc-JAt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="brG-Bs-7zm" secondAttribute="trailing" id="p90-jj-gec"/>
                 <constraint firstAttribute="trailing" secondItem="qjy-D0-rIz" secondAttribute="trailing" constant="16" id="pLU-ri-SPe"/>
                 <constraint firstItem="qjy-D0-rIz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="pT3-F2-uf1"/>
                 <constraint firstItem="pOp-Pd-jhn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="53" id="tDY-uH-lEP"/>
-                <constraint firstItem="brG-Bs-7zm" firstAttribute="leading" secondItem="pOp-Pd-jhn" secondAttribute="leading" id="y6h-bf-PfB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-10.144927536231885" y="181.80803571428569"/>
