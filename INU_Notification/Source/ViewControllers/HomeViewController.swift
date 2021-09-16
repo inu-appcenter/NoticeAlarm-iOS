@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let nextViewController: NoticeViewController = segue.destination as? NoticeViewController,
               let cell: HomeKeywordCollectionViewCell = sender as? HomeKeywordCollectionViewCell,
-              let keyword: String  = cell.keywordButton.titleLabel?.text else {
+              let keyword: String  = cell.keywordTitleLabel.text else {
             return
         }
         
@@ -68,7 +68,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 class HomeKeywordCollectionViewCell: UICollectionViewCell {
     
-    let keywordButton: UIButton = UIButton()
+    let keywordTitleLabel: UILabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -85,10 +85,10 @@ class HomeKeywordCollectionViewCell: UICollectionViewCell {
      keywordCell에 UIButton을 추가 및 레이아웃을 설정해주는 역할을 합니다.
      */
     private func setupView() {
-        keywordButton.titleLabel?.font = .boldSystemFont(ofSize: 20)
-        contentView.addSubview(keywordButton)
+        keywordTitleLabel.font = .boldSystemFont(ofSize: 20)
+        contentView.addSubview(keywordTitleLabel)
         
-        keywordButton.snp.makeConstraints { make in
+        keywordTitleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(11)
             make.top.equalToSuperview().inset(19)
         }
@@ -103,7 +103,7 @@ class HomeKeywordCollectionViewCell: UICollectionViewCell {
     
     func configure(name: String?) {
         guard let name = name else { return }
-        keywordButton.setTitle("#\(name)", for: .normal)
-        keywordButton.setTitleColor(.black, for: .normal)
+        keywordTitleLabel.text = "#\(name)"
+        keywordTitleLabel.textColor = .black
     }
 }
