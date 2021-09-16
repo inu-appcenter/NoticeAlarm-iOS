@@ -221,7 +221,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Uv-Qg-baB">
                                 <rect key="frame" x="19" y="224" width="376" height="589"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dNv-uS-mZb">
                                     <size key="itemSize" width="376" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -260,6 +260,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="aYv-IW-O9B" secondAttribute="trailing" constant="18" id="qXL-wP-NZM"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="376" height="100"/>
                                         <connections>
                                             <outlet property="content" destination="aYv-IW-O9B" id="ozO-Vp-vVs"/>
