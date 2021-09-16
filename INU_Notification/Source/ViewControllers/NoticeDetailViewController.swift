@@ -15,8 +15,8 @@ class NoticeDetailViewController: UIViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lineIndicator: UIView!
-    @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +53,5 @@ class NoticeDetailViewController: UIViewController {
                 }
             }
         }
-    }
-    @IBAction func goToBeforeView(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
 }
