@@ -82,6 +82,7 @@ extension NoticeViewController: UICollectionViewDataSource, UICollectionViewDele
         self.present(slideViewController, animated: true, completion: nil)
         slideViewController.webView.load(URLRequest(url: URL(string: noticeArray[indexPath.item].url)!))
         slideViewController.dateLabel.text = noticeArray[indexPath.item].time
+        slideViewController.titleLabel.text = noticeArray[indexPath.item].title
     }
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
