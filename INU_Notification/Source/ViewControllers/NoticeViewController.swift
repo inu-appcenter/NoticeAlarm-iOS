@@ -17,14 +17,16 @@ class NoticeViewController: UIViewController {
     // 연산 프로퍼티 적용, 배열을 encode 하여 저장
     private var noticeArray: [Notice] {
         get {
+            guard let keyword = keyword?.components(separatedBy: "#")[1] else { return [] }
             var notices: [Notice]?
-            if let data = UserDefaults.standard.data(forKey: keyword!) {
+            if let data = UserDefaults.standard.data(forKey: keyword) {
                 notices = try? PropertyListDecoder().decode([Notice].self, from: data)
             }
             return notices ?? []
         }
         set {
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: keyword!)
+            guard let keyword = keyword?.components(separatedBy: "#")[1] else { return }
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: keyword)
         }
     }
     
@@ -57,8 +59,8 @@ class NoticeViewController: UIViewController {
 
 extension NoticeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
-//        return noticeArray.count
+//        return 7
+        return noticeArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,19 +68,20 @@ extension NoticeViewController: UICollectionViewDataSource, UICollectionViewDele
             return UICollectionViewCell()
         }
         
-        cell.title.text = "2021-2학기 수강신청 일정 안내"
-        cell.content.text = "2021학년도 2학기 수강신청 일정을 아래와 같이 안내하오니 학생들이 해당기간내에 수강..."
-//        cell.title.text = noticeArray[indexPath.item].title
-//        cell.content.text = noticeArray[indexPath.item].url
+//        cell.title.text = "2021-2학기 수강신청 일정 안내"
+//        cell.content.text = "2021학년도 2학기 수강신청 일정을 아래와 같이 안내하오니 학생들이 해당기간내에 수강..."
+        cell.title.text = noticeArray[indexPath.item].title
+        cell.content.text = noticeArray[indexPath.item].url
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let slideViewController = NoticeDetailViewController()
-        slideViewController.dateLabel.text = noticeArray[indexPath.item].time
         slideViewController.modalPresentationStyle = .custom
         slideViewController.transitioningDelegate = self
         self.present(slideViewController, animated: true, completion: nil)
+        slideViewController.webView.load(URLRequest(url: URL(string: noticeArray[indexPath.item].url)!))
+        slideViewController.dateLabel.text = noticeArray[indexPath.item].time
     }
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
@@ -94,7 +97,6 @@ class KeywordListCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var content: UILabel!
-    
     
     override func layoutSubviews() {
         super.layoutSubviews()

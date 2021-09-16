@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoticeDetailViewController" customModule="INU_Notification" customModuleProvider="target">
             <connections>
+                <outlet property="dateLabel" destination="pOp-Pd-jhn" id="8QL-xT-Xmp"/>
                 <outlet property="lineIndicator" destination="qjy-D0-rIz" id="NM5-96-SAk"/>
                 <outlet property="okButton" destination="Fcm-s8-ZXf" id="13O-ih-c8X"/>
                 <outlet property="view" destination="iN0-l3-epB" id="opn-YC-DFv"/>

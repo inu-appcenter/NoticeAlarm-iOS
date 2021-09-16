@@ -24,9 +24,6 @@ class NoticeDetailViewController: UIViewController {
         view.addGestureRecognizer(panGesture)
         
         lineIndicator.roundCorners(.allCorners, radius: 10)
-        
-        //TODO: url 바꿔야함
-        webView.load(URLRequest(url: URL(string: "http://www.inu.ac.kr/user/indexSub.do?codyMenuSeq=99317&siteId=isis&dum=dum&boardId=48001&page=1&command=view&boardSeq=646018")!))
     }
     
     override func viewDidLayoutSubviews() {
