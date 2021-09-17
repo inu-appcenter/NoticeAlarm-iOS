@@ -35,9 +35,9 @@ class KeywordViewController: UIViewController {
     //MARK: - App Cycle Part
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerKeywordsCollectionView.delegate = self
         registerKeywordsCollectionView.dataSource = self
         keywordTextField.delegate = self
-        
         
         // keyword textfield 설정 구간
         keywordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -59,7 +59,6 @@ class KeywordViewController: UIViewController {
         keywordTextField.leftView?.tintColor = .lightGray
         
         iconImageView.image = Bundle.main.icon
-        setupCollectionView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,20 +80,22 @@ class KeywordViewController: UIViewController {
     }
     
     //MARK: - 사용자 정의 함수 part
-    private func setupCollectionView() {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumLineSpacing = .zero
-        flowLayout.minimumInteritemSpacing = 16
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.sectionInset = .init(top: 5, left: 16, bottom: 5, right: 16)
-        
-        
-        registerKeywordsCollectionView.setCollectionViewLayout(flowLayout, animated: false)
-        registerKeywordsCollectionView.delegate = self
-        registerKeywordsCollectionView.dataSource = self
-        registerKeywordsCollectionView.register(KeywordCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
-    }
     
+    @IBAction func deleteAllNotice(_ sender: Any) {
+        var noticeArray: [Notice] {
+            get {
+                var notices: [Notice]?
+                if let data = UserDefaults.standard.data(forKey: "장학") {
+                    notices = try? PropertyListDecoder().decode([Notice].self, from: data)
+                }
+                return notices ?? []
+            }
+            set {
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: "장학")
+            }
+        }
+        noticeArray.removeAll()
+    }
     /// 사용자가 학과를 선택했는지 확인합니다.
     func checkMajor() {
         
@@ -197,8 +198,7 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
     /**
      키워드를 삭제합니다.
      */
-    @objc
-    func deleteKeywords(sender: UIButton) {
+    @objc func deleteKeywords(sender: UIButton) {
         let userDefault: UserDefaults = .standard
         guard let text = sender.titleLabel?.text,
               let token = userDefault.string(forKey: "FCMToken") else { return }
@@ -272,8 +272,8 @@ class KeywordCollectionViewCell: UICollectionViewCell {
     private func setupView() {
         contentView.addSubview(keywordButton)
         
-        keywordButton.snp.makeConstraints { maker in
-            maker.edges.equalToSuperview().inset(10)
+        keywordButton.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(10)
         }
     }
     
