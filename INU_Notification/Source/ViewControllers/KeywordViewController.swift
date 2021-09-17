@@ -58,7 +58,7 @@ class KeywordViewController: UIViewController {
         keywordTextField.leftViewMode = .always
         keywordTextField.leftView?.tintColor = .lightGray
         
-        iconImageView.image = Bundle.main.icon
+        iconImageView.image = UIImage(named: "Icon")
     }
     
     override func viewDidAppear(_ animated: Bool) {
