@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fkI-7f-tln">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fkI-7f-tln">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -83,7 +84,9 @@
                                                 <constraint firstItem="L7L-bS-kb7" firstAttribute="top" secondItem="TP3-up-aAC" secondAttribute="top" constant="21" id="DJx-qb-XcT"/>
                                                 <constraint firstAttribute="bottom" secondItem="L7L-bS-kb7" secondAttribute="bottom" constant="21" id="EfB-PX-xGw"/>
                                                 <constraint firstItem="L7L-bS-kb7" firstAttribute="leading" secondItem="TP3-up-aAC" secondAttribute="leading" constant="8" id="GDu-iK-NrS"/>
+                                                <constraint firstItem="L7L-bS-kb7" firstAttribute="centerY" secondItem="TP3-up-aAC" secondAttribute="centerY" id="Kbp-XZ-Y3K"/>
                                                 <constraint firstAttribute="trailing" secondItem="L7L-bS-kb7" secondAttribute="trailing" constant="8" id="WVI-mi-FGr"/>
+                                                <constraint firstItem="L7L-bS-kb7" firstAttribute="centerX" secondItem="TP3-up-aAC" secondAttribute="centerX" id="dBy-LV-BGu"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="323" height="97"/>
