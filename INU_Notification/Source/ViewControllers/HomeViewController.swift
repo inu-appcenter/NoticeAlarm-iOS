@@ -25,10 +25,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.dataSource = self
-        
-        let alwaysFirstLaunch: FirstLaunch = .alwaysFirst()
-        if alwaysFirstLaunch.isFirstLaunch {
-            let updateAlert = UIAlertController(title: "경고", message: "이용을 위해 학과를 무조건! 선택하셔야합니다. 선택하러 가시겠어요?", preferredStyle: .alert)
+#if DEBUG
+        let firstLaunch: FirstLaunch = .alwaysFirst()
+#else
+        let firstLaunch: FirstLaunch = .init(userDefaults: .standard, key: "")
+#endif
+        if firstLaunch.isFirstLaunch {
+            let updateAlert = UIAlertController(title: "처음이시군요!", message: "학과를 선택하러 가시겠어요?", preferredStyle: .alert)
             updateAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
                 // 유저가 ok버튼을 누르면 ViewController를 보여주잣..
                 let vc = self.storyboard?.instantiateViewController(identifier: "MajorSelectViewController") as! MajorSelectViewController
@@ -64,8 +67,8 @@ class HomeViewController: UIViewController {
         guard let nextViewController: NoticeViewController = segue.destination as? NoticeViewController,
               let cell: HomeKeywordCollectionViewCell = sender as? HomeKeywordCollectionViewCell,
               let keyword: String  = cell.keywordTitleLabel.text else {
-            return
-        }
+                  return
+              }
         
         nextViewController.keyword = keyword
     }

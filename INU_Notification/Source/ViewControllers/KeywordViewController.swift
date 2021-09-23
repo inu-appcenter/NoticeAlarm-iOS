@@ -78,43 +78,6 @@ class KeywordViewController: UIViewController {
             keywordTextField.text = keywordTextField.text?.trimmingCharacters(in: .whitespaces)
         }
     }
-    
-    //MARK: - 사용자 정의 함수 part
-    
-    @IBAction func deleteAllNotice(_ sender: Any) {
-        var noticeArray: [Notice] {
-            get {
-                var notices: [Notice]?
-                if let data = UserDefaults.standard.data(forKey: "장학") {
-                    notices = try? PropertyListDecoder().decode([Notice].self, from: data)
-                }
-                return notices ?? []
-            }
-            set {
-                UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: "장학")
-            }
-        }
-        noticeArray.removeAll()
-    }
-    /// 사용자가 학과를 선택했는지 확인합니다.
-    func checkMajor() {
-        
-        // UserDefaults에 학과가 저장이 되었는가?
-        if let major = UserDefaults.standard.string(forKey: "major"), major != "" {
-            print(major)
-        } else {
-            // 알람 나와랏
-            let updateAlert = UIAlertController(title: "경고", message: "이용을 위해 학과를 무조건! 선택하셔야합니다. 선택하러 가시겠어요?", preferredStyle: .alert)
-            updateAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                // 유저가 ok버튼을 누르면 ViewController를 보여주잣..
-                let vc = self.storyboard?.instantiateViewController(identifier: "MajorSelectViewController") as! MajorSelectViewController
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true)
-            }))
-            present(updateAlert, animated: true)
-            
-        }
-    }    
 }
 
 // MARK: - Extension
@@ -156,9 +119,9 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
         let userDefault: UserDefaults = .standard
         guard let major = userDefault.string(forKey: "major"),
               let token = userDefault.string(forKey: "FCMToken") else {
-            present(simpleAlert(title: "오류", message: "토큰 또는 학과 설정이\n제대로 되어있지 않습니다!"), animated: true, completion: nil)
-            return true
-        }
+                  present(simpleAlert(title: "오류", message: "토큰 또는 학과 설정이\n제대로 되어있지 않습니다!"), animated: true, completion: nil)
+                  return true
+              }
         
         // 이미 등록한 키워드가 존재하는가?
         if keywordArray.firstIndex(where: {$0 == text}) != nil {
