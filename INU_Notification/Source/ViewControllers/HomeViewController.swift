@@ -25,6 +25,35 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.dataSource = self
+        
+        let alwaysFirstLaunch: FirstLaunch = .alwaysFirst()
+        if alwaysFirstLaunch.isFirstLaunch {
+            let updateAlert = UIAlertController(title: "경고", message: "이용을 위해 학과를 무조건! 선택하셔야합니다. 선택하러 가시겠어요?", preferredStyle: .alert)
+            updateAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                // 유저가 ok버튼을 누르면 ViewController를 보여주잣..
+                let vc = self.storyboard?.instantiateViewController(identifier: "MajorSelectViewController") as! MajorSelectViewController
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            }))
+            present(updateAlert, animated: true)
+        }
+        // Navigation Item Part
+//        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+//        imageView.image = UIImage(named: "Icon")
+//        imageView.contentMode = .scaleAspectFit
+//
+//        let label = UILabel()
+//        label.text = "공지알리미"
+//        label.sizeToFit()
+//        label.textColor = .black
+//        label.font = .systemFont(ofSize: 18)
+//        label.center = view.center
+//        label.textAlignment = .center
+        
+//        let view = UIView()
+//        view.addSubview(label)
+//        view.addSubview(imageView)
+//        navigationItem.titleView = view
     }
     
     override func viewWillAppear(_ animated: Bool) {

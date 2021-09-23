@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
-                                    -> Void) {
+                                -> Void) {
         let userInfo = notification.request.content.userInfo
         
         Messaging.messaging().appDidReceiveMessage(userInfo)
@@ -92,8 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         guard let url: String = userInfo["body"] as? String,
               let keyword: String = userInfo["keyword"] as? String,
               let title: String = userInfo["title"] as? String else {
-            return
-        }
+                  return
+              }
         var noticeArray: [Notice] {
             get {
                 var keywords: [Notice]?
