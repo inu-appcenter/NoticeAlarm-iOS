@@ -28,6 +28,8 @@ class MajorSelectViewController: UIViewController {
         selectCollectionView.dataSource = self
         selectCollectionView.delegate = self
         
+        isModalInPresentation = true
+        
         let jsonDecoder: JSONDecoder = JSONDecoder()
         guard let dataAsset: NSDataAsset = NSDataAsset(name: "INU") else {
             return
