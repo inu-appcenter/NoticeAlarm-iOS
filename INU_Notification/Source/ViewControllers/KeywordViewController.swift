@@ -262,6 +262,6 @@ class KeywordCollectionViewCell: UICollectionViewCell {
         keywordButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
         keywordButton.semanticContentAttribute = .forceRightToLeft
         keywordButton.tintColor = .lightGray
-        keywordButton.setTitleColor(.lightGray, for: .normal)
+        keywordButton.setTitleColor(.black, for: .normal)
     }
 }
