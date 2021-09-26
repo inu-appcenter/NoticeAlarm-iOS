@@ -67,6 +67,7 @@ class KeywordViewController: UIViewController {
     }
     
     //MARK: - Delegate Part
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -83,10 +84,6 @@ class KeywordViewController: UIViewController {
 // MARK: - Extension
 
 extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return keywordArray.count
@@ -236,7 +233,11 @@ class KeywordCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(keywordButton)
         
         keywordButton.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(10)
+//            make.edges.equalToSuperview().inset(12)
+            make.top.equalToSuperview().inset(12)
+            make.leading.equalToSuperview().inset(12)
+            make.bottom.equalToSuperview().inset(12)
+            make.trailing.equalToSuperview().inset(9)
         }
     }
     
@@ -253,12 +254,12 @@ class KeywordCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = frame.height / 2
         layer.borderWidth = 2
         layer.borderColor = UIColor.lightGray.cgColor
-        
     }
     
     func configure(name: String?) {
         guard let name = name else { return }
         keywordButton.setTitle("#\(name)", for: .normal)
+        keywordButton.titleLabel?.font = UIFont(name: keywordButton.titleLabel?.font.fontName ?? "", size: 16)
         keywordButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
         keywordButton.semanticContentAttribute = .forceRightToLeft
         keywordButton.tintColor = .lightGray
