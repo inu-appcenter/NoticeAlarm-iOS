@@ -15,6 +15,7 @@ class KeywordViewController: UIViewController {
     @IBOutlet weak var popularKeywordLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var registerKeywordsCollectionView: UICollectionView!
+    @IBOutlet weak var searchSubView: UIView!
     
     private let cellID: String = "registerKeywordCell"
     // 연산 프로퍼티 적용, 배열을 encode 하여 저장
@@ -32,7 +33,7 @@ class KeywordViewController: UIViewController {
     }
     
     
-    //MARK: - App Cycle Part
+    //MARK: App Cycle Part
     override func viewDidLoad() {
         super.viewDidLoad()
         registerKeywordsCollectionView.delegate = self
@@ -45,9 +46,6 @@ class KeywordViewController: UIViewController {
         
         // keyword textfield border 설정 구간
         keywordTextField.borderStyle = .none
-        keywordTextField.layer.borderWidth = 2
-        keywordTextField.layer.cornerRadius = 15
-        keywordTextField.layer.borderColor = UIColor(hex: "14286F").cgColor
         
         // keyword textfield 왼쪽 아이콘 설정 구간
         let imageView = UIImageView()
@@ -59,14 +57,11 @@ class KeywordViewController: UIViewController {
         keywordTextField.leftView?.tintColor = .lightGray
         
         iconImageView.image = UIImage(named: "Icon")
+        
+        setSearchTextFieldUI()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        // checkMajor()
-    }
-    
-    //MARK: - Delegate Part
+    //MARK: Delegate Part
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -78,6 +73,15 @@ class KeywordViewController: UIViewController {
             present(simpleAlert(title: "오류", message: "띄어쓰기는 할 수 없습니다!"), animated: true, completion: nil)
             keywordTextField.text = keywordTextField.text?.trimmingCharacters(in: .whitespaces)
         }
+    }
+    
+    //MARK: Custom Part
+    
+    func setSearchTextFieldUI() {
+        searchSubView.layer.cornerRadius = 15
+        searchSubView.layer.borderWidth = 2
+        searchSubView.layer.borderColor = UIColor(hex: "#142B6F").cgColor
+        
     }
 }
 
@@ -233,7 +237,7 @@ class KeywordCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(keywordButton)
         
         keywordButton.snp.makeConstraints { make in
-//            make.edges.equalToSuperview().inset(12)
+            //            make.edges.equalToSuperview().inset(12)
             make.top.equalToSuperview().inset(12)
             make.leading.equalToSuperview().inset(12)
             make.bottom.equalToSuperview().inset(12)

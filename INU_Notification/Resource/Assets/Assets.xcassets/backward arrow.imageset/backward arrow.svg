@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="21" viewBox="0 0 21 21">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="21" height="21" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Backward_arrow" data-name="Backward arrow" clip-path="url(#clip-path)">
+    <path id="패스_10" data-name="패스 10" d="M10.5,0,8.591,1.909l7.227,7.227H0v2.727H15.818L8.591,19.091,10.5,21,21,10.5Z" transform="translate(21 21) rotate(180)" fill="#142b6f"/>
+  </g>
+</svg>
