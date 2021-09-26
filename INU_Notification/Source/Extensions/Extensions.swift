@@ -35,21 +35,6 @@ extension UIColor {
     }
 }
 
-// MARK: - Bundle
-extension Bundle {
-    
-    public var icon: UIImage? {
-        
-        if let icons = infoDictionary?["CFBundleIcons"] as? [String: Any],
-           let primary = icons["CFBundlePrimaryIcon"] as? [String: Any],
-           let files = primary["CFBundleIconFiles"] as? [String],
-           let icon = files.last {
-            return UIImage(named: icon)
-        }
-        return nil
-    }
-}
-
 // MARK: - First Launch (최초 실행)
 final class FirstLaunch {
     let wasLaunchedBefore: Bool

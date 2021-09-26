@@ -56,7 +56,7 @@ class KeywordViewController: UIViewController {
         keywordTextField.leftViewMode = .always
         keywordTextField.leftView?.tintColor = .lightGray
         
-        iconImageView.image = UIImage(named: "Icon")
+        iconImageView.image = UIImage(named: "logo")
         
         setSearchTextFieldUI()
     }
