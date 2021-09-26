@@ -25,11 +25,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollectionView.dataSource = self
-#if DEBUG
-        let firstLaunch: FirstLaunch = .alwaysFirst()
-#else
-        let firstLaunch: FirstLaunch = .init(userDefaults: .standard, key: "")
-#endif
+//#if DEBUG
+//        let firstLaunch: FirstLaunch = .alwaysFirst()
+//#else
+        let firstLaunch: FirstLaunch = .init(userDefaults: .standard, key: "isFirst")
+//#endif
         if firstLaunch.isFirstLaunch {
             let updateAlert = UIAlertController(title: "처음이시군요!", message: "학과를 선택하러 가시겠어요?", preferredStyle: .alert)
             updateAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
@@ -40,23 +40,6 @@ class HomeViewController: UIViewController {
             }))
             present(updateAlert, animated: true)
         }
-        // Navigation Item Part
-//        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-//        imageView.image = UIImage(named: "Icon")
-//        imageView.contentMode = .scaleAspectFit
-//
-//        let label = UILabel()
-//        label.text = "공지알리미"
-//        label.sizeToFit()
-//        label.textColor = .black
-//        label.font = .systemFont(ofSize: 18)
-//        label.center = view.center
-//        label.textAlignment = .center
-        
-//        let view = UIView()
-//        view.addSubview(label)
-//        view.addSubview(imageView)
-//        navigationItem.titleView = view
     }
     
     override func viewWillAppear(_ animated: Bool) {
