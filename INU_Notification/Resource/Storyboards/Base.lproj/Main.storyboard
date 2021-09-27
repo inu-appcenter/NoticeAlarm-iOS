@@ -314,10 +314,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KCK-i0-ryX">
-                                <rect key="frame" x="145" y="115" width="124" height="124"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="124" id="8Fr-Fu-ylr"/>
-                                </constraints>
+                                <rect key="frame" x="167" y="184" width="80.5" height="55"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Js3-jG-vEF">
                                 <rect key="frame" x="24" y="433" width="390" height="45"/>
@@ -396,19 +393,20 @@
                         <viewLayoutGuide key="safeArea" id="yrz-Nl-7Hz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="KCK-i0-ryX" firstAttribute="centerX" secondItem="cZL-9J-Vgh" secondAttribute="centerX" id="1FD-Dg-LGk"/>
                             <constraint firstItem="yrz-Nl-7Hz" firstAttribute="trailing" secondItem="Pld-uJ-NSv" secondAttribute="trailing" constant="24" id="9H3-WE-lbB"/>
-                            <constraint firstItem="yrz-Nl-7Hz" firstAttribute="trailing" secondItem="KCK-i0-ryX" secondAttribute="trailing" constant="145" id="FaW-jC-iA9"/>
                             <constraint firstItem="Js3-jG-vEF" firstAttribute="top" secondItem="ahL-uC-rwN" secondAttribute="bottom" constant="16" id="Olr-Tu-FGS"/>
                             <constraint firstItem="Js3-jG-vEF" firstAttribute="trailing" secondItem="yrz-Nl-7Hz" secondAttribute="trailing" id="QZm-5O-lDT"/>
                             <constraint firstItem="Pld-uJ-NSv" firstAttribute="top" secondItem="yrz-Nl-7Hz" secondAttribute="top" constant="232" id="UxL-dG-JaB"/>
                             <constraint firstItem="ahL-uC-rwN" firstAttribute="top" secondItem="Pld-uJ-NSv" secondAttribute="bottom" constant="65" id="aSb-Fz-beb"/>
                             <constraint firstItem="m7X-cY-ZQR" firstAttribute="top" secondItem="ahL-uC-rwN" secondAttribute="bottom" constant="102" id="aq7-SN-RxC"/>
                             <constraint firstItem="Pld-uJ-NSv" firstAttribute="leading" secondItem="yrz-Nl-7Hz" secondAttribute="leading" constant="24" id="dmA-gM-Ahp"/>
+                            <constraint firstItem="KCK-i0-ryX" firstAttribute="height" secondItem="cZL-9J-Vgh" secondAttribute="height" multiplier="1:16.2846" id="fVl-Q4-ZSh"/>
                             <constraint firstItem="Js3-jG-vEF" firstAttribute="leading" secondItem="Pld-uJ-NSv" secondAttribute="leading" id="hXV-H7-KNL"/>
                             <constraint firstItem="ahL-uC-rwN" firstAttribute="leading" secondItem="Pld-uJ-NSv" secondAttribute="leading" id="jKz-tz-CkE"/>
+                            <constraint firstItem="KCK-i0-ryX" firstAttribute="width" secondItem="cZL-9J-Vgh" secondAttribute="width" multiplier="1:5.14286" id="pcr-dN-YM8"/>
                             <constraint firstItem="m7X-cY-ZQR" firstAttribute="leading" secondItem="Pld-uJ-NSv" secondAttribute="leading" id="t36-8Z-CkF"/>
                             <constraint firstItem="Pld-uJ-NSv" firstAttribute="top" secondItem="KCK-i0-ryX" secondAttribute="bottom" constant="37" id="uvU-01-s13"/>
-                            <constraint firstItem="KCK-i0-ryX" firstAttribute="leading" secondItem="yrz-Nl-7Hz" secondAttribute="leading" constant="145" id="xvf-We-7Bz"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="키워드" image="key" catalog="system" id="veT-8B-my5"/>
