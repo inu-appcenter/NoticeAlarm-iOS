@@ -96,7 +96,7 @@ extension KeywordViewController: UICollectionViewDataSource, UICollectionViewDel
     
     // 셀의 크기 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return KeywordCollectionViewCell.fittingSize(availableHeight: 45, name: keywordArray[indexPath.item])
+        return KeywordCollectionViewCell.fittingSize(availableHeight: 40, name: keywordArray[indexPath.item])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
