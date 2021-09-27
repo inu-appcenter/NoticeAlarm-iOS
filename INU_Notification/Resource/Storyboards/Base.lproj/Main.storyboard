@@ -149,13 +149,13 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeKeywordCell" id="1YA-N6-zlU" customClass="HomeKeywordCollectionViewCell" customModule="INU_Notification" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="169" height="161"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="148"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2yD-Ay-Je7">
-                                            <rect key="frame" x="0.0" y="0.0" width="169" height="161"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="148"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="169" height="161"/>
+                                        <size key="customSize" width="150" height="148"/>
                                         <connections>
                                             <segue destination="bfa-lE-dgf" kind="show" id="YnJ-VR-fws"/>
                                         </connections>
@@ -333,17 +333,17 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="registerKeywordCell" id="hzL-N6-9mf" customClass="KeywordCollectionViewCell" customModule="INU_Notification" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-5" width="128" height="55"/>
+                                        <rect key="frame" x="0.0" y="2.5" width="128" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hlW-7E-xWu">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="128" height="55"/>
+                                        <size key="customSize" width="128" height="40"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기키워드(추후 업데이트 예정)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7X-cY-ZQR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기키워드(추후 업데이트 예정)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7X-cY-ZQR">
                                 <rect key="frame" x="24" y="519" width="250" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -352,15 +352,43 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pld-uJ-NSv">
                                 <rect key="frame" x="24" y="276" width="366" height="52"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mS8-pH-g6u">
-                                        <rect key="frame" x="37" y="9" width="291" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mS8-pH-g6u">
+                                        <rect key="frame" x="43" y="14" width="273" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="QcQ-Hd-HQ8">
+                                        <rect key="frame" x="13" y="18" width="16" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="2ex-KF-4UC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSe-T4-1qg">
+                                        <rect key="frame" x="334" y="19" width="14" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="MaZ-3a-WdH"/>
+                                            <constraint firstAttribute="width" constant="14" id="Zd1-zd-5ud"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="x-mark-line"/>
+                                        <connections>
+                                            <action selector="deleteSearchText:" destination="O7k-J8-2cB" eventType="touchUpInside" id="YZr-4U-4Gb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="lSe-T4-1qg" firstAttribute="leading" secondItem="mS8-pH-g6u" secondAttribute="trailing" constant="18" id="4PT-8K-pmD"/>
+                                    <constraint firstAttribute="bottom" secondItem="mS8-pH-g6u" secondAttribute="bottom" constant="14" id="A5z-HY-gW2"/>
+                                    <constraint firstAttribute="bottom" secondItem="lSe-T4-1qg" secondAttribute="bottom" constant="19" id="ABP-bK-wPh"/>
+                                    <constraint firstAttribute="bottom" secondItem="QcQ-Hd-HQ8" secondAttribute="bottom" constant="18" id="QKE-yA-qDn"/>
+                                    <constraint firstItem="QcQ-Hd-HQ8" firstAttribute="leading" secondItem="Pld-uJ-NSv" secondAttribute="leading" constant="13" id="dzj-B6-kas"/>
+                                    <constraint firstItem="lSe-T4-1qg" firstAttribute="top" secondItem="Pld-uJ-NSv" secondAttribute="top" constant="19" id="fik-io-8Tf"/>
+                                    <constraint firstItem="mS8-pH-g6u" firstAttribute="leading" secondItem="QcQ-Hd-HQ8" secondAttribute="trailing" constant="14" id="qQ2-nU-Bjw"/>
+                                    <constraint firstItem="QcQ-Hd-HQ8" firstAttribute="top" secondItem="Pld-uJ-NSv" secondAttribute="top" constant="18" id="soY-p4-5J1"/>
+                                    <constraint firstAttribute="trailing" secondItem="lSe-T4-1qg" secondAttribute="trailing" constant="18" id="x0g-Ob-lRE"/>
+                                    <constraint firstItem="mS8-pH-g6u" firstAttribute="top" secondItem="Pld-uJ-NSv" secondAttribute="top" constant="14" id="x1q-4l-nV5"/>
                                     <constraint firstAttribute="height" constant="52" id="yyT-22-YWs"/>
                                 </constraints>
                             </view>
@@ -386,11 +414,11 @@
                     <tabBarItem key="tabBarItem" title="키워드" image="key" catalog="system" id="veT-8B-my5"/>
                     <navigationItem key="navigationItem" id="ecr-sN-Zqf"/>
                     <connections>
+                        <outlet property="deleteButton" destination="lSe-T4-1qg" id="iqb-xv-jpH"/>
                         <outlet property="iconImageView" destination="KCK-i0-ryX" id="dhf-Cu-dmg"/>
-                        <outlet property="keywordTextField" destination="mS8-pH-g6u" id="opJ-WS-Mce"/>
-                        <outlet property="popularKeywordLabel" destination="m7X-cY-ZQR" id="hQu-gR-a5W"/>
-                        <outlet property="registerKeywordLabel" destination="ahL-uC-rwN" id="9c7-op-wbw"/>
                         <outlet property="registerKeywordsCollectionView" destination="Js3-jG-vEF" id="zQZ-fq-6ju"/>
+                        <outlet property="searchSubView" destination="Pld-uJ-NSv" id="ep3-Ao-TRf"/>
+                        <outlet property="searchTextField" destination="mS8-pH-g6u" id="opJ-WS-Mce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywg-3Y-DXQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -440,6 +468,8 @@
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="key" catalog="system" width="86" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="search" width="16" height="16"/>
+        <image name="x-mark-line" width="14" height="14"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

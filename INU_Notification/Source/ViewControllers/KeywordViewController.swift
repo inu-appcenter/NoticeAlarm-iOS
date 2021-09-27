@@ -10,12 +10,11 @@ import SnapKit
 
 class KeywordViewController: UIViewController {
     
-    @IBOutlet weak var keywordTextField: UITextField!
-    @IBOutlet weak var registerKeywordLabel: UILabel!
-    @IBOutlet weak var popularKeywordLabel: UILabel!
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var registerKeywordsCollectionView: UICollectionView!
     @IBOutlet weak var searchSubView: UIView!
+    @IBOutlet weak var deleteButton: UIButton!
     
     private let cellID: String = "registerKeywordCell"
     // 연산 프로퍼티 적용, 배열을 encode 하여 저장
@@ -38,23 +37,9 @@ class KeywordViewController: UIViewController {
         super.viewDidLoad()
         registerKeywordsCollectionView.delegate = self
         registerKeywordsCollectionView.dataSource = self
-        keywordTextField.delegate = self
+        searchTextField.delegate = self
         
-        // keyword textfield 설정 구간
-        keywordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        keywordTextField.clearButtonMode = .always
-        
-        // keyword textfield border 설정 구간
-        keywordTextField.borderStyle = .none
-        
-        // keyword textfield 왼쪽 아이콘 설정 구간
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "magnifyingglass")
-        imageView.frame = CGRect(x: 0.0, y: 0.0, width: imageView.image!.size.width + 10.0, height: imageView.image!.size.height)
-        imageView.contentMode = .center
-        keywordTextField.leftView = imageView
-        keywordTextField.leftViewMode = .always
-        keywordTextField.leftView?.tintColor = .lightGray
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         iconImageView.image = UIImage(named: "logo")
         
@@ -68,20 +53,26 @@ class KeywordViewController: UIViewController {
     }
     
     @objc func textFieldDidChange(_ sender: Any?) {
-        if let isWhiteSpaceExists = keywordTextField.text?.contains(" "),
+        if let isWhiteSpaceExists = searchTextField.text?.contains(" "),
            isWhiteSpaceExists {
             present(simpleAlert(title: "오류", message: "띄어쓰기는 할 수 없습니다!"), animated: true, completion: nil)
-            keywordTextField.text = keywordTextField.text?.trimmingCharacters(in: .whitespaces)
+            searchTextField.text = searchTextField.text?.trimmingCharacters(in: .whitespaces)
         }
     }
     
     //MARK: Custom Part
     
     func setSearchTextFieldUI() {
-        searchSubView.layer.cornerRadius = 15
+        
+        // search textfield border 설정 구간
+        searchTextField.borderStyle = .none
+        searchSubView.layer.cornerRadius = 20
         searchSubView.layer.borderWidth = 2
         searchSubView.layer.borderColor = UIColor(hex: "#142B6F").cgColor
-        
+    }
+    
+    @IBAction func deleteSearchText(_ sender: Any) {
+        searchTextField.text = ""
     }
 }
 
