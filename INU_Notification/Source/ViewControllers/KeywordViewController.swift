@@ -228,11 +228,11 @@ class KeywordCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(keywordButton)
         
         keywordButton.snp.makeConstraints { make in
-            //            make.edges.equalToSuperview().inset(12)
-            make.top.equalToSuperview().inset(12)
-            make.leading.equalToSuperview().inset(12)
-            make.bottom.equalToSuperview().inset(12)
-            make.trailing.equalToSuperview().inset(9)
+            make.edges.equalToSuperview().inset(12)
+            //            make.top.equalToSuperview().inset(12)
+            //            make.leading.equalToSuperview().inset(12)
+            //            make.bottom.equalToSuperview().inset(12)
+            //            make.trailing.equalToSuperview().inset(9)
         }
     }
     
@@ -254,8 +254,8 @@ class KeywordCollectionViewCell: UICollectionViewCell {
     func configure(name: String?) {
         guard let name = name else { return }
         keywordButton.setTitle("#\(name)", for: .normal)
-        keywordButton.titleLabel?.font = UIFont(name: keywordButton.titleLabel?.font.fontName ?? "", size: 16)
-        keywordButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+        keywordButton.titleLabel?.font = UIFont(name: keywordButton.titleLabel!.font.fontName, size: 16)
+        keywordButton.setImage(UIImage(named: "x-mark"), for: .normal)
         keywordButton.semanticContentAttribute = .forceRightToLeft
         keywordButton.tintColor = .lightGray
         keywordButton.setTitleColor(.black, for: .normal)
