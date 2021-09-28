@@ -63,9 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Messaging.messaging().appDidReceiveMessage(userInfo)
         
         print("NOTIFICATION FOREGROUND")
-        print(userInfo["body"]) // Optional(테스트링크), 공지 링크
-        print(userInfo["keyword"]) // Optional(장학), 키워드
-        print(userInfo["title"]) // Optional(테스트장학), 제목
+        print(userInfo["link"] ?? "Link does not exist.") // Optional(테스트링크), 공지 링크
+        print(userInfo["keyword"] ?? "Keyword does not exist.") // Optional(장학), 키워드
+        print(userInfo["name"] ?? "title does not exist.") // Optional(테스트장학), 제목
         noticeProcessing(userInfo)
         
         // Change this to your preferred presentation option
@@ -81,17 +81,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Messaging.messaging().appDidReceiveMessage(userInfo)
         
         print("NOTIFICATION PUSH CLICKED")
-        print(userInfo["body"]) // Optional(테스트링크)
-        print(userInfo["keyword"]) // Optional(장학)
-        print(userInfo["title"]) // Optional(테스트장학)
+        print(userInfo["link"] ?? "Link does not exist.") // Optional(테스트링크), 공지 링크
+        print(userInfo["keyword"] ?? "Keyword does not exist.") // Optional(장학), 키워드
+        print(userInfo["name"] ?? "title does not exist.") // Optional(테스트장학), 제목
         noticeProcessing(userInfo)
         completionHandler()
     }
     
     private func noticeProcessing(_ userInfo: [AnyHashable : Any]) {
-        guard let url: String = userInfo["body"] as? String,
+        guard let url: String = userInfo["link"] as? String,
               let keyword: String = userInfo["keyword"] as? String,
-              let title: String = userInfo["title"] as? String else {
+              let title: String = userInfo["name"] as? String else {
                   return
               }
         var noticeArray: [Notice] {
