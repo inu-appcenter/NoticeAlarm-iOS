@@ -86,6 +86,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 class HomeKeywordCollectionViewCell: UICollectionViewCell {
     
     let keywordTitleLabel: UILabel = UILabel()
+    let summaryLabel: UILabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -103,11 +104,21 @@ class HomeKeywordCollectionViewCell: UICollectionViewCell {
      */
     private func setupView() {
         keywordTitleLabel.font = .boldSystemFont(ofSize: 20)
+        summaryLabel.font = UIFont(name: summaryLabel.font.fontName, size: 16)
         contentView.addSubview(keywordTitleLabel)
+        contentView.addSubview(summaryLabel)
         
         keywordTitleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(11)
             make.top.equalToSuperview().inset(19)
+        }
+        
+        summaryLabel.snp.makeConstraints { make in
+            make.leading.equalTo(self.keywordTitleLabel.snp.leading)
+            make.top.equalTo(self.keywordTitleLabel.snp.bottom).offset(10)
+            make.trailing.equalToSuperview().inset(11)
+//            make.bottom.equalToSuperview().inset(17)
+            
         }
     }
     
@@ -122,5 +133,9 @@ class HomeKeywordCollectionViewCell: UICollectionViewCell {
         guard let name = name else { return }
         keywordTitleLabel.text = "#\(name)"
         keywordTitleLabel.textColor = .black
+        
+        summaryLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        summaryLabel.numberOfLines = 4
+        summaryLabel.textColor = .black
     }
 }
