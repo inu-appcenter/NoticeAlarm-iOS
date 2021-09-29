@@ -18,6 +18,9 @@ enum EditStatus: String {
     case setMajor = "student"
     case addkeywords = "info"
     case deleteKeywords = "delete"
+    case getKeywordSummary = "mainpage"
+    case getKeywordList = "list"
+    case getPopularKeyword = "popular"
 }
 
 struct APIRequest {
@@ -29,8 +32,10 @@ struct APIRequest {
         }
         self.resourceURL = resourceURL
         switch endpoint {
-        case .addkeywords, .setMajor:
+        case .addkeywords, .setMajor, .getKeywordSummary, .getKeywordList:
             httpMethod = "POST"
+        case .getPopularKeyword:
+            httpMethod = "GET"
         case .deleteKeywords:
             httpMethod = "DELETE"
         default:
