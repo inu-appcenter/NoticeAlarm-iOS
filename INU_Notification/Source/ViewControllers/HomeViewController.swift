@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class HomeViewController: UIViewController {
     
@@ -74,6 +75,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.layer.borderColor = UIColor(hex: "#FED630").cgColor
         } else {
             cell.backgroundColor = .none
+            cell.layer.borderColor = UIColor(hex: "#FEDE59").cgColor
         }
         return cell
     }
